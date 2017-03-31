@@ -1,8 +1,7 @@
-﻿using System.Data.Entity;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace AvaliacaoInfnet.MVC.Models
 {
@@ -16,6 +15,8 @@ namespace AvaliacaoInfnet.MVC.Models
             // Adicionar declarações de usuário personalizado aqui
             return userIdentity;
         }
+
+        public bool Status { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
