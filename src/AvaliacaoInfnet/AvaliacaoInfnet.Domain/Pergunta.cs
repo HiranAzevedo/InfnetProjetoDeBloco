@@ -1,4 +1,6 @@
-﻿namespace AvaliacaoInfnet.Domain
+﻿using System.Collections.Generic;
+
+namespace AvaliacaoInfnet.Domain
 {
     public class Pergunta
     {
@@ -8,6 +10,8 @@
 
         public bool Status { get; set; }
 
-        //relacionamentos
+        public virtual ICollection<TipoResposta> TipoRespostas { get; set; }
+
+        public virtual ICollection<Avaliacao> Avaliacoes { get; set; }
     }
 }

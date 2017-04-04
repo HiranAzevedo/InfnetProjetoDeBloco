@@ -1,4 +1,6 @@
-﻿namespace AvaliacaoInfnet.Domain
+﻿using System.Collections.Generic;
+
+namespace AvaliacaoInfnet.Domain
 {
     public class Respondente
     {
@@ -15,5 +17,13 @@
         public bool Status { get; set; }
 
         public string Senha { get; set; }
+
+        //Relacionamentos
+
+        public virtual ICollection<Perfil> Perfil { get; set; }
+
+        public virtual ICollection<AvaliacaoResposta> AvaliacaoRespostas { get; set; }
+
+        public virtual ICollection<Avaliacao> Avaliacoes { get; set; }
     }
 }
