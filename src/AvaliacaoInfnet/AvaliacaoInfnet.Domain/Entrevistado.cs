@@ -2,7 +2,7 @@
 
 namespace AvaliacaoInfnet.Domain
 {
-    public class Respondente
+    public class Entrevistado
     {
         public int Id { get; set; }
 
