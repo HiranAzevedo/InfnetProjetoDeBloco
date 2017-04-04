@@ -29,10 +29,11 @@ namespace AvaliacaoInfnet.Domain
 
         public virtual ICollection<Respondente> Respondentes { get; set; }
 
-        public Avaliacao(Perfil perfil, ICollection<Pergunta> perguntas)
+        public Avaliacao(Perfil perfil, ICollection<Pergunta> perguntas, ICollection<Respondente> respondentes)
         {
             Perfil = perfil;
-            Perguntas = perguntas;
+            Perguntas = perguntas ?? new List<Pergunta>();
+            respondentes = respondentes ?? new List<Respondente>();
         }
 
         public ICollection<AvaliacaoResposta> ObterRespostasByRespondete(int id)

@@ -13,5 +13,7 @@ namespace AvaliacaoInfnet.Domain
         public virtual ICollection<TipoResposta> TipoRespostas { get; set; }
 
         public virtual ICollection<Avaliacao> Avaliacoes { get; set; }
+
+        public virtual ICollection<AvaliacaoResposta> Respostas { get; set; }
     }
 }
