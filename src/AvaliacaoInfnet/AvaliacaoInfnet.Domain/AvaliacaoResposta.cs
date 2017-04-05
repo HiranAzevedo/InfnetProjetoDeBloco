@@ -5,7 +5,7 @@
         public int Id { get; set; }
 
         public int? IdRespondente { get; set; }
-        public virtual Respondente Respondente { get; set; }
+        public virtual Entrevistado Respondente { get; set; }
 
         public int? IdAvaliacao { get; set; }
         public virtual Avaliacao Avaliacao { get; set; }

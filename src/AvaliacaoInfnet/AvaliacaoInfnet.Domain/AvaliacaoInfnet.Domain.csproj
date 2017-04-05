@@ -42,7 +42,8 @@
   <ItemGroup>
     <Compile Include="Avaliacao.cs" />
     <Compile Include="AvaliacaoResposta.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="Entrevistado.cs" />
+    <Compile Include="Mailer\IMailer.cs" />
     <Compile Include="Perfil.cs" />
     <Compile Include="Pergunta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
