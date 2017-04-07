@@ -13,7 +13,7 @@ namespace AvaliacaoInfnet.Domain
         public int IdAvaliacao { get; set; }
 
         //Chave idPergunta e valor IdResposta
-        Dictionary<int, int> perguntaResposta { get; set; }
+        Dictionary<int, int> PerguntaResposta { get; set; }
 
     }
 }

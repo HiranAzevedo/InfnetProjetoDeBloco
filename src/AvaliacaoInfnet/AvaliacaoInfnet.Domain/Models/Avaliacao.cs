@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace AvaliacaoInfnet.Domain
 {
@@ -31,7 +30,6 @@ namespace AvaliacaoInfnet.Domain
             Descricao = descricao;
             Perguntas = perguntas ?? new List<Pergunta>();
             Status = status;
-        }
-        
+        }        
     }
 }
