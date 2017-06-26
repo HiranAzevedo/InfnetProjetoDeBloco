@@ -11,6 +11,7 @@ namespace AvaliacaoInfnet.Persistencia.Repositorio
     {
         protected AvaliacaoInfnetContext Db = new AvaliacaoInfnetContext();
 
+    
         public void Add(TEntity obj)
         {
             Db.Set<TEntity>().Add(obj);

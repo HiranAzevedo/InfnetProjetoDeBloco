@@ -40,7 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\Repositorio\IAvaliacaoRepository.cs" />
+    <Compile Include="Interfaces\Repositorio\IAvaliacaoRespostaRepository.cs" />
+    <Compile Include="Interfaces\Repositorio\IEntrevistadoRepository.cs" />
+    <Compile Include="Interfaces\Repositorio\IPerfilRepository.cs" />
+    <Compile Include="Interfaces\Repositorio\IPerguntaRepository.cs" />
+    <Compile Include="Interfaces\Repositorio\IPerguntaRespostaAvaliacaoRepository.cs" />
     <Compile Include="Interfaces\Repositorio\IRepositoryBase.cs" />
+    <Compile Include="Interfaces\Repositorio\ITipoRespostaRepository.cs" />
     <Compile Include="Interfaces\Service\IServiceBase.cs" />
     <Compile Include="Models\Avaliacao.cs" />
     <Compile Include="Models\AvaliacaoResposta.cs" />
