@@ -40,7 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IRepositoryBase.cs" />
+    <Compile Include="Interfaces\Repositorio\IRepositoryBase.cs" />
+    <Compile Include="Interfaces\Service\IServiceBase.cs" />
     <Compile Include="Models\Avaliacao.cs" />
     <Compile Include="Models\AvaliacaoResposta.cs" />
     <Compile Include="Models\Entrevistado.cs" />
@@ -50,6 +51,8 @@
     <Compile Include="Models\PerguntaRespostaAvaliacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\TipoResposta.cs" />
+    <Compile Include="Services\AvaliacaoService.cs" />
+    <Compile Include="Services\ServiceBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
