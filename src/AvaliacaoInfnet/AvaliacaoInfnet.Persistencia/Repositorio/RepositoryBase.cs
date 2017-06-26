@@ -1,6 +1,8 @@
-﻿using AvaliacaoInfnet.Persistencia.Contexto;
+﻿using AvaliacaoInfnet.Domain.Interfaces;
+using AvaliacaoInfnet.Persistencia.Contexto;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace AvaliacaoInfnet.Persistencia.Repositorio
@@ -13,6 +15,12 @@ namespace AvaliacaoInfnet.Persistencia.Repositorio
         {
             Db.Set<TEntity>().Add(obj);
             Db.SaveChanges();
+
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
         }
 
         public IEnumerable<TEntity> GetAll()
@@ -31,16 +39,11 @@ namespace AvaliacaoInfnet.Persistencia.Repositorio
             Db.Set<TEntity>().Remove(obj);
             Db.SaveChanges();
         }
-
+        
         public void Update(TEntity obj)
         {
             Db.Entry(obj).State = EntityState.Modified;
             Db.SaveChanges();
-        }
-
-        public void Dispose()
-        {
-            throw new NotImplementedException();
-        }
+        }       
     }
 }

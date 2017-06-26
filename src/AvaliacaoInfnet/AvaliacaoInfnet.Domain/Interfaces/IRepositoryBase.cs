@@ -3,17 +3,17 @@ using System.Collections.Generic;
 
 namespace AvaliacaoInfnet.Domain.Interfaces
 {
-    public interface IRepository<TEntity> : IDisposable where TEntity : class
+    public interface IRepositoryBase<TEntity> : IDisposable where TEntity : class
     {
         IEnumerable<TEntity> GetAll();
 
         TEntity GetById(int id);
 
-        TEntity Add(TEntity entity);
+        void Add(TEntity obj);
 
-        TEntity Update(TEntity entity);
+        void Update(TEntity obj);
 
-        void Remove(int id);
+        void Remove(TEntity obj);
 
     }
 }
