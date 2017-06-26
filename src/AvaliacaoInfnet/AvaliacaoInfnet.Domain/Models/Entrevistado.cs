@@ -8,8 +8,6 @@ namespace AvaliacaoInfnet.Domain
 
         public string Nome { get; set; }
 
-        public int IdPerfil { get; set; }
-
         public string Email { get; set; }
 
         public string Telefone { get; set; }

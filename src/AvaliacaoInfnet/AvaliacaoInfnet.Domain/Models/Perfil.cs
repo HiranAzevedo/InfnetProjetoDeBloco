@@ -10,16 +10,15 @@ namespace AvaliacaoInfnet.Domain
 
         public bool Status { get; set; }
 
-        public virtual ICollection<Entrevistado> Respondentes { get; set; }
+        public virtual ICollection<Entrevistado> Entrevistados { get; set; }
 
         public virtual ICollection<Avaliacao> Avaliacoes { get; set; }
 
-        public Perfil()
-        { }
+        public Perfil() { }
 
         public Perfil(ICollection<Entrevistado> respondentes, ICollection<Avaliacao> avaliacoes)
         {
-            Respondentes = respondentes;
+            Entrevistados = respondentes;
             Avaliacoes = avaliacoes;
         }
     }

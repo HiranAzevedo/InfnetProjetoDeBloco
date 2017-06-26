@@ -10,7 +10,7 @@ namespace AvaliacaoInfnet.Domain
 
         public bool Status { get; set; }
 
-        //relaciomamentos
+        //Relaciomamentos
 
         public virtual ICollection<Pergunta> Perguntas { get; set; }
 
