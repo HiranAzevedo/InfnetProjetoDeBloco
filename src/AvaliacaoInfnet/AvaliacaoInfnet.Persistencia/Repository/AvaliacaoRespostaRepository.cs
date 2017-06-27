@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AvaliacaoInfnet.Persistencia.Repositorio
+namespace AvaliacaoInfnet.Persistencia.Repository
 {
-    public class PerguntaRepository : RepositoryBase<Pergunta>, IPerguntaRepository
+   public class AvaliacaoRespostaRepository : RepositoryBase<AvaliacaoResposta>, IAvaliacaoRespostaRepository
     {
     }
 }

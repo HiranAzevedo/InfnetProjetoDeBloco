@@ -2,16 +2,13 @@
 using AvaliacaoInfnet.Domain.Interfaces.Repositorio;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AvaliacaoInfnet.Persistencia.Repositorio
+namespace AvaliacaoInfnet.Persistencia.Repository
 {
-   public class AvaliacaoRepository : RepositoryBase<Avaliacao>, IAvaliacaoRepository
-    {      
+   public class TipoRespostaRepository : RepositoryBase<TipoResposta>, ITipoRespostaRepository
+    {
     }
-
-   
 }

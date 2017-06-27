@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AvaliacaoInfnet.Persistencia.Repositorio
+namespace AvaliacaoInfnet.Persistencia.Repository
 {
     public class PerfilRepository : RepositoryBase<Perfil>, IPerfilRepository
     {
