@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace AvaliacaoInfnet.Persistencia.Migrations
 {
-    internal sealed class Configuration : DbMigrationsConfiguration<AvaliacaoInfnet.Persistencia.Contexto.AvaliacaoInfnetContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<AvaliacaoInfnet.Persistencia.Context.AvaliacaoInfnetContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(AvaliacaoInfnet.Persistencia.Contexto.AvaliacaoInfnetContext context)
+        protected override void Seed(AvaliacaoInfnet.Persistencia.Context.AvaliacaoInfnetContext context)
         {
             //  This method will be called after migrating to the latest version.
 

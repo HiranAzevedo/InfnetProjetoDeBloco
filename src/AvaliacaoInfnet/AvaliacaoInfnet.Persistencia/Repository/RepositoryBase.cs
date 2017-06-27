@@ -1,5 +1,5 @@
 ﻿using AvaliacaoInfnet.Domain.Interfaces;
-using AvaliacaoInfnet.Persistencia.Contexto;
+using AvaliacaoInfnet.Persistencia.Context;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

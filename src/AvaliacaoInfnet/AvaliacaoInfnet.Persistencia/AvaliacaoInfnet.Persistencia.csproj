@@ -54,7 +54,7 @@
     <Compile Include="Config\PerguntaConfiguration.cs" />
     <Compile Include="Config\PerguntaRespostaAvaliacaoConfiguration.cs" />
     <Compile Include="Config\TipoRespostaConfiguration.cs" />
-    <Compile Include="Contexto\AvaliacaoInfnetContext.cs" />
+    <Compile Include="Context\AvaliacaoInfnetContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AvaliacaoRepository.cs" />

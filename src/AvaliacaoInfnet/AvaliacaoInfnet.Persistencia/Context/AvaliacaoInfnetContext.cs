@@ -1,9 +1,10 @@
 ﻿using AvaliacaoInfnet.Domain;
+using AvaliacaoInfnet.Persistencia.Config;
 using System;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
-namespace AvaliacaoInfnet.Persistencia.Contexto
+namespace AvaliacaoInfnet.Persistencia.Context
 {
     public class AvaliacaoInfnetContext : DbContext
     {
@@ -22,8 +23,16 @@ namespace AvaliacaoInfnet.Persistencia.Contexto
             modelBuilder.Properties<String>().Configure(p => p.HasColumnType("varchar"));
             modelBuilder.Properties<String>().Configure(p => p.HasMaxLength(100));
 
-            //modelBuilder.Configurations.Add(new ClienteConfiguration());
-            //modelBuilder.Configurations.Add(new ProdutoConfiguration());
+            /*
+            Adicionar configurações específicas por entidade:
+            */
+            modelBuilder.Configurations.Add(new AvaliacaoConfiguration());
+            modelBuilder.Configurations.Add(new AvaliacaoRespostaConfiguration());
+            modelBuilder.Configurations.Add(new EntrevistadoConfiguration());
+            modelBuilder.Configurations.Add(new PerfilConfiguration());
+            modelBuilder.Configurations.Add(new PerguntaConfiguration());
+            modelBuilder.Configurations.Add(new PerguntaRespostaAvaliacaoConfiguration());
+            modelBuilder.Configurations.Add(new TipoRespostaConfiguration());
         }
 
         public DbSet<Avaliacao> Avaliacoes { get; set; }
