@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.Migrations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace AvaliacaoInfnet.Persistencia.Migrations
 {
+    using System;
+    using System.Data.Entity;
+    using System.Data.Entity.Migrations;
+    using System.Linq;
+
     internal sealed class Configuration : DbMigrationsConfiguration<AvaliacaoInfnet.Persistencia.Context.AvaliacaoInfnetContext>
     {
         public Configuration()
