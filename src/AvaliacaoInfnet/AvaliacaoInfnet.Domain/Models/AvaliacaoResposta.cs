@@ -14,5 +14,7 @@ namespace AvaliacaoInfnet.Domain
 
         //Chave idPergunta e valor IdResposta
         public virtual ICollection<PerguntaRespostaAvaliacao> PerguntaResposta { get; set; }
+
+        public virtual ICollection<TipoResposta> TipoRespostas { get; set; }
     }
 }

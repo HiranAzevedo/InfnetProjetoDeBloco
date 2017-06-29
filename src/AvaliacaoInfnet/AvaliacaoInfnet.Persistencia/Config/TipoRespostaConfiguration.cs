@@ -9,6 +9,7 @@ namespace AvaliacaoInfnet.Persistencia.Config
         {
             HasKey(x => x.Id);
             HasMany(x => x.Perguntas).WithMany(x => x.TipoRespostas);
+            HasMany(x => x.AvaliacaoRespostas).WithMany(x => x.TipoRespostas);
         }
     }
 }
