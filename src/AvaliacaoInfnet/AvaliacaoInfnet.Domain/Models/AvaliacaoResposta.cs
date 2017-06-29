@@ -13,6 +13,6 @@ namespace AvaliacaoInfnet.Domain
         public int IdAvaliacao { get; set; }
 
         //Chave idPergunta e valor IdResposta
-        List<PerguntaRespostaAvaliacao> PerguntaResposta { get; set; }
+        public virtual ICollection<PerguntaRespostaAvaliacao> PerguntaResposta { get; set; }
     }
 }

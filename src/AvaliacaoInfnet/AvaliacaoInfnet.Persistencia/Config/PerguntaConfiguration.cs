@@ -23,6 +23,8 @@ namespace AvaliacaoInfnet.Persistencia.Config
                     m.MapRightKey("TipoRespostaId"); //O nome da chave estrangeira oriunda de TipoResposta será TipoRespostaId
                     m.ToTable("PerguntaTipoResposta"); //Nome da tabela de relacionamento.
                 });
+            HasMany(x => x.Avaliacoes).WithMany(x => x.Perguntas);
+            HasMany(x => x.TipoRespostas).WithMany(x => x.Perguntas);
         }
     }
 }

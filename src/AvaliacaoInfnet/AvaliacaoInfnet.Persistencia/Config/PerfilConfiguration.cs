@@ -8,6 +8,8 @@ namespace AvaliacaoInfnet.Persistencia.Config
         public PerfilConfiguration()
         {
             HasKey(x => x.Id);
+            HasMany(x => x.Entrevistados);
+            HasMany(x => x.Avaliacoes);
         }
     }
 }

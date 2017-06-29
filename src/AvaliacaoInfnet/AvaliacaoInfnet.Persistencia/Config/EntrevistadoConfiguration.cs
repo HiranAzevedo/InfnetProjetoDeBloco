@@ -10,15 +10,11 @@ namespace AvaliacaoInfnet.Persistencia.Config
             HasKey(x => x.Id);
             HasRequired(x => x.Nome);
             HasRequired(x => x.Email);
+            HasRequired(a => a.Perfil);
 
-            //Relação 1:N -> Entrevisto PRECISA TER um perfil e 1 perfil pode ter N Entrevistados
-            HasRequired(a => a.Perfil)
-                .WithMany()
-                .Map(m => m.MapKey("PerfilId"));
-
-            //Relação 1:1 -> Aluno x Usuário
-            //HasRequired(a => a.Usuario)
-            //    .WithRequiredPrincipal();
+            HasMany(x => x.Perfil);
+            HasMany(x => x.AvaliacaoRespostas);
+            HasMany(x => x.Avaliacoes);
         }
     }
 }
