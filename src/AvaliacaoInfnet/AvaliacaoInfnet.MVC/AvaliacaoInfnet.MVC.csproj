@@ -203,8 +203,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AvaliacaoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PerfilController.cs" />
+    <Compile Include="Controllers\PerguntaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -303,10 +303,15 @@
     <Content Include="Views\Avaliacao\Details.cshtml" />
     <Content Include="Views\Avaliacao\Index.cshtml" />
     <Content Include="Views\Perfil\Index.cshtml" />
+    <Content Include="Views\Perfil\Create.cshtml" />
+    <Content Include="Views\Perfil\Detais.cshtml" />
+    <Content Include="Views\Perfil\Edit.cshtml" />
+    <Content Include="Views\Pergunta\Index.cshtml" />
+    <Content Include="Views\Pergunta\Create.cshtml" />
+    <Content Include="Views\Pergunta\Edit.cshtml" />
+    <Content Include="Views\Pergunta\Details.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Pergunta\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

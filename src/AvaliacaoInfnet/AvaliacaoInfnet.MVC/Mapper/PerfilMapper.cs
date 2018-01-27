@@ -9,7 +9,7 @@ namespace AvaliacaoInfnet.MVC.Mapper
 {
     public class PerfilMapper
     {
-        public static Perfil ExtractPerfilFromViewModel(PerfilViewModel viewModel)
+        public static Perfil ExtractFromViewModel(PerfilViewModel viewModel)
         {
             var perfil = new Perfil
             {
@@ -19,7 +19,7 @@ namespace AvaliacaoInfnet.MVC.Mapper
             return perfil;
         }
 
-        public static PerfilViewModel BuildViewModelFromPerfil( Perfil perfil)
+        public static PerfilViewModel BuildViewModelFrom(Perfil perfil)
         {
             var viewModel = new PerfilViewModel
             {

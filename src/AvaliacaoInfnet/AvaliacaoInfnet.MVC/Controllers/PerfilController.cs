@@ -1,6 +1,7 @@
 ﻿using AvaliacaoInfnet.Application.Interface;
 using AvaliacaoInfnet.MVC.Mapper;
 using AvaliacaoInfnet.MVC.Models;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
@@ -20,6 +21,11 @@ namespace AvaliacaoInfnet.MVC.Controllers
         public ActionResult Index()
         {
             var allPerfis = perfilApp.GetAll().ToList();
+            var perfis = new List<PerfilViewModel>();
+            for (int i = 0; i < allPerfis.Count; i++)
+            {
+                perfis.Add(PerfilMapper.BuildViewModelFrom(allPerfis[i]));
+            }
             return View(allPerfis);
         }
 
@@ -31,8 +37,7 @@ namespace AvaliacaoInfnet.MVC.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             var perfil = perfilApp.GetById(id.Value);
-
-            var perfilViewModel = PerfilMapper.BuildViewModelFromPerfil(perfil);
+            var perfilViewModel = PerfilMapper.BuildViewModelFrom(perfil);
 
             if (perfil == null)
             {
@@ -56,15 +61,11 @@ namespace AvaliacaoInfnet.MVC.Controllers
         public ActionResult Create([Bind(Include = "Nome,SobreNome,NomeUsuario,Senha,Local")] PerfilViewModel perfilViewModel)
         {
             if (ModelState.IsValid)
-            {
-              
-                var perfil = PerfilMapper.ExtractPerfilFromViewModel(perfilViewModel);
-
+            {              
+                var perfil = PerfilMapper.ExtractFromViewModel(perfilViewModel);
                 perfilApp.Add(perfil);
-
                 return RedirectToAction(nameof(Index));
             }
-
             return View(perfilViewModel);
         }
 
@@ -76,7 +77,7 @@ namespace AvaliacaoInfnet.MVC.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var perfilViewModel = PerfilMapper.BuildViewModelFromPerfil( perfilApp.GetById(id.Value));
+            var perfilViewModel = PerfilMapper.BuildViewModelFrom( perfilApp.GetById(id.Value));
 
             if (perfilViewModel == null)
             {
@@ -95,7 +96,7 @@ namespace AvaliacaoInfnet.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                var perfil = PerfilMapper.ExtractPerfilFromViewModel(perfilViewModel);
+                var perfil = PerfilMapper.ExtractFromViewModel(perfilViewModel);
                 perfilApp.Update(perfil);
 
                 return RedirectToAction(nameof(Index));
@@ -112,7 +113,7 @@ namespace AvaliacaoInfnet.MVC.Controllers
             }
             var perfil = perfilApp.GetById(id.Value);
 
-            var perfilViewModel = PerfilMapper.BuildViewModelFromPerfil( perfil);
+            var perfilViewModel = PerfilMapper.BuildViewModelFrom( perfil);
 
             if (perfilViewModel == null)
             {
