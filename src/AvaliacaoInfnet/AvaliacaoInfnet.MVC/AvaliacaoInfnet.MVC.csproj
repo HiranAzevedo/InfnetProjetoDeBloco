@@ -201,8 +201,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AvaliacaoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PerfilController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -297,6 +299,7 @@
     <Content Include="Views\Avaliacao\Edit.cshtml" />
     <Content Include="Views\Avaliacao\Details.cshtml" />
     <Content Include="Views\Avaliacao\Index.cshtml" />
+    <Content Include="Views\Perfil\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Pergunta\" />
@@ -311,6 +314,10 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AvaliacaoInfnet.Application\AvaliacaoInfnet.Application.csproj">
+      <Project>{E10DA97E-0FC7-44C2-8F5E-C2CEF3762251}</Project>
+      <Name>AvaliacaoInfnet.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AvaliacaoInfnet.Domain\AvaliacaoInfnet.Domain.csproj">
       <Project>{950b9275-e8d8-466b-8dca-96b0f0d56583}</Project>
       <Name>AvaliacaoInfnet.Domain</Name>

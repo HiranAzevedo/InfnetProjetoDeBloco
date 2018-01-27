@@ -16,10 +16,10 @@ namespace AvaliacaoInfnet.Domain
 
         public Perfil() { }
 
-        public Perfil(ICollection<Entrevistado> respondentes, ICollection<Avaliacao> avaliacoes)
-        {
-            Entrevistados = respondentes;
-            Avaliacoes = avaliacoes;
-        }
+        //public Perfil(ICollection<Entrevistado> respondentes, ICollection<Avaliacao> avaliacoes)
+        //{
+        //    Entrevistados = respondentes;
+        //    Avaliacoes = avaliacoes;
+        //}
     }
 }

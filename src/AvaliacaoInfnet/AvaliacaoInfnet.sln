@@ -1,13 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaliacaoInfnet.MVC", "AvaliacaoInfnet.MVC\AvaliacaoInfnet.MVC.csproj", "{17DA2635-78FA-4F50-8120-4717BFBF36BA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaliacaoInfnet.Domain", "AvaliacaoInfnet.Domain\AvaliacaoInfnet.Domain.csproj", "{950B9275-E8D8-466B-8DCA-96B0F0D56583}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaliacaoInfnet.Persistencia", "AvaliacaoInfnet.Persistencia\AvaliacaoInfnet.Persistencia.csproj", "{63EB095E-DA38-4ABB-BFE1-D83F79FDE63F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaliacaoInfnet.Application", "AvaliacaoInfnet.Application\AvaliacaoInfnet.Application.csproj", "{E10DA97E-0FC7-44C2-8F5E-C2CEF3762251}"
+	ProjectSection(ProjectDependencies) = postProject
+		{950B9275-E8D8-466B-8DCA-96B0F0D56583} = {950B9275-E8D8-466B-8DCA-96B0F0D56583}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,8 +32,15 @@ Global
 		{63EB095E-DA38-4ABB-BFE1-D83F79FDE63F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63EB095E-DA38-4ABB-BFE1-D83F79FDE63F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63EB095E-DA38-4ABB-BFE1-D83F79FDE63F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E10DA97E-0FC7-44C2-8F5E-C2CEF3762251}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E10DA97E-0FC7-44C2-8F5E-C2CEF3762251}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E10DA97E-0FC7-44C2-8F5E-C2CEF3762251}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E10DA97E-0FC7-44C2-8F5E-C2CEF3762251}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F672880C-91C4-4BEC-8681-B0D7DC8AB22F}
 	EndGlobalSection
 EndGlobal
