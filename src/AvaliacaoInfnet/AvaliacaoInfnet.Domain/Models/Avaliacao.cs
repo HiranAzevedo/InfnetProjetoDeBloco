@@ -23,12 +23,13 @@ namespace AvaliacaoInfnet.Domain
 
         public virtual ICollection<Pergunta> Perguntas { get; set; }
 
-        public Avaliacao(Perfil perfil, string descricao, bool status, ICollection<Pergunta> perguntas)
-        {
-            Perfil = perfil;
-            Descricao = descricao;
-            Perguntas = perguntas ?? new List<Pergunta>();
-            Status = status;
-        }        
+        ////public Avaliacao(Perfil perfil, string descricao, bool status, ICollection<Pergunta> perguntas)
+        //public Avaliacao(string descricao, bool status)
+        //{
+        //    //Perfil = perfil;
+        //    Descricao = descricao;
+        //    //Perguntas = perguntas ?? new List<Pergunta>();
+        //    Status = status;
+        //}        
     }
 }

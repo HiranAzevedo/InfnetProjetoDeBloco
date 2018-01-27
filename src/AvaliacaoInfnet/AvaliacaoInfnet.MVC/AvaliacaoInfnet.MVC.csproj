@@ -208,7 +208,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Mapper\AvaliacaoMapper.cs" />
     <Compile Include="Mapper\PerfilMapper.cs" />
+    <Compile Include="Mapper\PerguntaMapper.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AvaliacaoViewModel.cs" />
     <Compile Include="Models\EntrevistadoViewModel.cs" />
