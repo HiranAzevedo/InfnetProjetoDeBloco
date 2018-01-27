@@ -23,7 +23,6 @@ namespace AvaliacaoInfnet.Domain
 
         public virtual ICollection<Pergunta> Perguntas { get; set; }
 
-
         public Avaliacao(Perfil perfil, string descricao, bool status, ICollection<Pergunta> perguntas)
         {
             Perfil = perfil;
