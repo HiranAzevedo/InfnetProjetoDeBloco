@@ -6,7 +6,7 @@ namespace AvaliacaoInfnet.MVC.Models
     {
         public PerguntaViewModel(int referenceId)
         {
-            this.ReferenceId = referenceId;
+            ReferenceId = referenceId;
         }
 
         [Required]
