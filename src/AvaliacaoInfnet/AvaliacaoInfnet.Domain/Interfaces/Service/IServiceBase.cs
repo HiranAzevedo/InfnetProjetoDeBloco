@@ -14,6 +14,5 @@ namespace AvaliacaoInfnet.Domain.Interfaces
         void Update(TEntity obj);
         void Remove(TEntity obj);
         void Dispose();
-		//teste
     }
 }

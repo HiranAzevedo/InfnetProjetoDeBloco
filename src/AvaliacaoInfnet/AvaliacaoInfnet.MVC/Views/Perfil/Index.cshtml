@@ -29,9 +29,9 @@
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
-                @*@Html.ActionLink("Edit", "Edit", new { id = item. }) |
-                @Html.ActionLink("Details", "Details", new { id = item.IdConta }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.IdConta })*@
+                @Html.ActionLink("Edit", "Edit", new { id = item.ReferenceId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ReferenceId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ReferenceId })
             </td>
         </tr>
     }

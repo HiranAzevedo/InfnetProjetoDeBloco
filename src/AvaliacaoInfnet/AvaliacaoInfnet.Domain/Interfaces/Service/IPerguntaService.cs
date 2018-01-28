@@ -2,6 +2,5 @@
 {
     public interface IPerguntaService : IServiceBase<Pergunta>
     {
-		//teste
     }
 }

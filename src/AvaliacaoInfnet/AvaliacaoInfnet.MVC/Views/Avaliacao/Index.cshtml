@@ -1,4 +1,4 @@
-﻿@model AvaliacaoInfnet.MVC.Models.AvaliacaoViewModel
+﻿@model IEnumerable<AvaliacaoInfnet.MVC.Models.AvaliacaoViewModel>
 
 @{
     ViewBag.Title = "Index";
@@ -10,50 +10,31 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Descricao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Perguntas)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DataInicio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DataFim)
-        </th>
-        <th></th>
-    </tr>
-
-    @*@foreach (var item in Model)
+    @foreach (var item in Model)
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.)
+                @Html.DisplayFor(modelItem => item.Descricao)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.SobreNome)
+                @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.NomeUsuario)
+                @Html.DisplayFor(modelItem => item.Perguntas)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Senha)
+                @Html.DisplayFor(modelItem => item.DataInicio)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Local)
+                @Html.DisplayFor(modelItem => item.DataFim)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.IdConta }) |
-                @Html.ActionLink("Details", "Details", new { id = item.IdConta }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.IdConta })
+                @Html.ActionLink("Edit", "Edit", new { id = item.ReferenceId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ReferenceId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ReferenceId })
             </td>
         </tr>
-    }*@
+    }
 
 </table>
 

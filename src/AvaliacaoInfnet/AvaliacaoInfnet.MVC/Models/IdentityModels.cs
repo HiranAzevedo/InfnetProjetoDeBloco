@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using AvaliacaoInfnet.Domain;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -17,6 +18,8 @@ namespace AvaliacaoInfnet.MVC.Models
         }
 
         public bool Status { get; set; }
+
+        public Perfil Perfil { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

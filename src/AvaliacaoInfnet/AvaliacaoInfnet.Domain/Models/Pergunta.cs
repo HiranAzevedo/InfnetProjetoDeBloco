@@ -15,13 +15,5 @@ namespace AvaliacaoInfnet.Domain
         public virtual ICollection<Avaliacao> Avaliacoes { get; set; }
 
         public virtual ICollection<AvaliacaoResposta> Respostas { get; set; }
-        
-
-        //public Pergunta(string descricao, bool status, ICollection<TipoResposta> tipoRespostas)
-        //{
-        //    Descricao = descricao;
-        //    Status = status;
-        //    TipoRespostas = tipoRespostas;
-        //}
     }
 }

@@ -1,6 +1,4 @@
-﻿
-
-using AvaliacaoInfnet.Application.Interface;
+﻿using AvaliacaoInfnet.Application.Interface;
 using AvaliacaoInfnet.Domain;
 using AvaliacaoInfnet.Domain.Interfaces.Service;
 

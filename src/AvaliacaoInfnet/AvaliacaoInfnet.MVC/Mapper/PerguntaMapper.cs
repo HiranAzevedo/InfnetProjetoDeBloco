@@ -10,14 +10,14 @@ namespace AvaliacaoInfnet.MVC.Mapper
             var pergunta = new Pergunta
             {
                 Descricao = viewModel.Descricao,
-                Status = viewModel.Status,                 
+                Status = viewModel.Status,
             };
             return pergunta;
         }
 
         public static PerguntaViewModel BuildViewModelFrom(Pergunta pergunta)
         {
-            var viewModel = new PerguntaViewModel
+            var viewModel = new PerguntaViewModel(pergunta.Id)
             {
                 Descricao = pergunta.Descricao,
                 Status = pergunta.Status,

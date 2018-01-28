@@ -1,16 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace AvaliacaoInfnet.MVC.Models
 {
     public class PerguntaViewModel
     {
+        public PerguntaViewModel(int referenceId)
+        {
+            this.ReferenceId = referenceId;
+        }
+
         [Required]
         public string Descricao { get; set; }
+
         [Required]
         public bool Status { get; set; }
+
+        [Required]
+        public readonly int ReferenceId;
     }
 }

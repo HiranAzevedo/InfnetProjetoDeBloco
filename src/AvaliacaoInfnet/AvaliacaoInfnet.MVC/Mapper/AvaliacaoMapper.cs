@@ -12,15 +12,15 @@ namespace AvaliacaoInfnet.MVC.Mapper
             {
                 //Perfil = viewModel.Perfil,
                 Descricao = viewModel.Descricao,
-                Status = viewModel.Status,              
-              //  Perguntas = viewModel.Perguntas,
+                Status = viewModel.Status,
+                //  Perguntas = viewModel.Perguntas,
             };
             return avaliacao;
         }
 
         public static AvaliacaoViewModel BuildViewModelFrom(Avaliacao avaliacao)
         {
-            var viewModel = new AvaliacaoViewModel
+            var viewModel = new AvaliacaoViewModel(avaliacao.Id)
             {
                 Perfil = avaliacao.Perfil,
                 Descricao = avaliacao.Descricao,
