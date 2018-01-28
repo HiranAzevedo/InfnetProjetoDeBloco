@@ -20,12 +20,12 @@ namespace AvaliacaoInfnet.MVC.Mapper
 
         public static AvaliacaoViewModel BuildViewModelFrom(Avaliacao avaliacao)
         {
-            var viewModel = new AvaliacaoViewModel(avaliacao.Id)
+            var viewModel = new AvaliacaoViewModel
             {
-                Perfil = avaliacao.Perfil,
+                //Perfil = avaliacao.Perfil,
                 Descricao = avaliacao.Descricao,
                 Status = avaliacao.Status,
-                Perguntas = avaliacao.Perguntas,
+                //Perguntas = avaliacao.Perguntas,
                 Titulo = avaliacao.Titulo,
             };
 

@@ -8,10 +8,8 @@ namespace AvaliacaoInfnet.Persistencia.Context
 {
     public class AvaliacaoInfnetContext : DbContext
     {
-        public AvaliacaoInfnetContext() : base()
-        {
-
-        }
+        public AvaliacaoInfnetContext() : base(nameof(AvaliacaoInfnet))
+        { }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -1,4 +1,5 @@
 ﻿using AvaliacaoInfnet.Domain.Interfaces;
+using AvaliacaoInfnet.Domain.Interfaces.Repositorio;
 using System;
 using System.Collections.Generic;
 

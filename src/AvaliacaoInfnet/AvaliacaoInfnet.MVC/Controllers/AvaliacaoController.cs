@@ -47,7 +47,7 @@ namespace AvaliacaoInfnet.MVC.Controllers
 
         // POST: Avaliacao/Create
         [HttpPost]
-        public ActionResult Create(AvaliacaoViewModel avaliacaoVM)
+        public ActionResult Create([Bind(Include = "Descricao, Status")]AvaliacaoViewModel avaliacaoVM)
         {
             try
             {
@@ -76,7 +76,7 @@ namespace AvaliacaoInfnet.MVC.Controllers
 
         // POST: Avaliacao/Edit/5
         [HttpPost]
-        public ActionResult Edit(AvaliacaoViewModel avaliacaoVM)
+        public ActionResult Edit([Bind(Include = "Descricao,Status")] AvaliacaoViewModel avaliacaoVM)
         {
             try
             {
@@ -110,12 +110,15 @@ namespace AvaliacaoInfnet.MVC.Controllers
             return View(avaliacaoVM);
         }
 
-        // POST: Avaliacao/Delete/5
-        [HttpPost]
-        public ActionResult DeletePost(int id)
+
+        // POST: PerfilConta/Delete/5
+        [HttpPost, ActionName(nameof(Delete))]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
         {
             avaliacaoApp.Remove(avaliacaoApp.GetById(id));
             return RedirectToAction(nameof(Index));
         }
+
     }
 }
