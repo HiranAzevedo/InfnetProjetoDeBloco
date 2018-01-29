@@ -13,12 +13,5 @@ namespace AvaliacaoInfnet.Domain
         public virtual ICollection<Entrevistado> Entrevistados { get; set; }
 
         public virtual ICollection<Avaliacao> Avaliacoes { get; set; }
-        
-
-        //public Perfil(ICollection<Entrevistado> respondentes, ICollection<Avaliacao> avaliacoes)
-        //{
-        //    Entrevistados = respondentes;
-        //    Avaliacoes = avaliacoes;
-        //}
     }
 }

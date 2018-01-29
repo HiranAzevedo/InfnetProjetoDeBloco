@@ -152,10 +152,19 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AvaliacaoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PerfilController.cs" />
+    <Compile Include="Controllers\PerguntaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Mapper\AvaliacaoMapper.cs" />
+    <Compile Include="Mapper\PerfilMapper.cs" />
+    <Compile Include="Mapper\PerguntaMapper.cs" />
+    <Compile Include="Models\PerguntaViewModel.cs" />
+    <Compile Include="Models\AvaliacaoViewModel.cs" />
+    <Compile Include="Models\PerfilViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -195,10 +204,21 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Avaliacao\Create.cshtml" />
+    <Content Include="Views\Avaliacao\Details.cshtml" />
+    <Content Include="Views\Avaliacao\Edit.cshtml" />
+    <Content Include="Views\Avaliacao\Index.cshtml" />
+    <Content Include="Views\Perfil\Create.cshtml" />
+    <Content Include="Views\Perfil\Edit.cshtml" />
+    <Content Include="Views\Perfil\Details.cshtml" />
+    <Content Include="Views\Perfil\Index.cshtml" />
+    <Content Include="Views\Pergunta\Create.cshtml" />
+    <Content Include="Views\Pergunta\Details.cshtml" />
+    <Content Include="Views\Pergunta\Edit.cshtml" />
+    <Content Include="Views\Pergunta\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -212,6 +232,24 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AvaliacaoInfnet.Application\AvaliacaoInfnet.Application.csproj">
+      <Project>{e10da97e-0fc7-44c2-8f5e-c2cef3762251}</Project>
+      <Name>AvaliacaoInfnet.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AvaliacaoInfnet.CC.IoC\AvaliacaoInfnet.CC.IoC.csproj">
+      <Project>{3de67d47-4e07-4695-b1f7-1549e081703b}</Project>
+      <Name>AvaliacaoInfnet.CC.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AvaliacaoInfnet.Domain\AvaliacaoInfnet.Domain.csproj">
+      <Project>{950b9275-e8d8-466b-8dca-96b0f0d56583}</Project>
+      <Name>AvaliacaoInfnet.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AvaliacaoInfnet.Persistencia\AvaliacaoInfnet.Persistencia.csproj">
+      <Project>{63eb095e-da38-4abb-bfe1-d83f79fde63f}</Project>
+      <Name>AvaliacaoInfnet.Persistencia</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
