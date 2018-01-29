@@ -11,6 +11,7 @@ namespace AvaliacaoInfnet.Web.Models
 
         [Required]
         public string Descricao { get; set; }
+
         [Required]
         public bool Status { get; set; }
 

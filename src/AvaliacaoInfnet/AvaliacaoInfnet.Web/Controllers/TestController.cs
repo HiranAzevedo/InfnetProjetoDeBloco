@@ -6,9 +6,8 @@ namespace AvaliacaoInfnet.Web.Controllers
     [RoutePrefix("api/test")]
     public class TestController : ApiController
     {
-
         [HttpGet, Route("emailTest")]
-        public IHttpActionResult sendTestMail()
+        public IHttpActionResult SendTestMail()
         {
             var mail = new Mailer();
             mail.EmailTest();

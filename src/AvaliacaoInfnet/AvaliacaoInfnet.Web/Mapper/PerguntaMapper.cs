@@ -1,9 +1,5 @@
 ﻿using AvaliacaoInfnet.Domain;
 using AvaliacaoInfnet.Web.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace AvaliacaoInfnet.Web.Mapper
 {

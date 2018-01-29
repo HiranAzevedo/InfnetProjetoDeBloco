@@ -1,4 +1,5 @@
-﻿using AvaliacaoInfnet.Application.Interface;
+﻿using AvaliacaoInfnet.Application;
+using AvaliacaoInfnet.Application.Interface;
 using AvaliacaoInfnet.Web.Mapper;
 using AvaliacaoInfnet.Web.Models;
 using System;
@@ -110,7 +111,6 @@ namespace AvaliacaoInfnet.Web.Controllers
             return View(avaliacaoVM);
         }
 
-
         // POST: PerfilConta/Delete/5
         [HttpPost, ActionName(nameof(Delete))]
         [ValidateAntiForgeryToken]
@@ -119,6 +119,5 @@ namespace AvaliacaoInfnet.Web.Controllers
             avaliacaoApp.Remove(avaliacaoApp.GetById(id));
             return RedirectToAction(nameof(Index));
         }
-
     }
 }
