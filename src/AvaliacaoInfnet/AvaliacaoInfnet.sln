@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaliacaoInfnet.MVC", "AvaliacaoInfnet.MVC\AvaliacaoInfnet.MVC.csproj", "{17DA2635-78FA-4F50-8120-4717BFBF36BA}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaliacaoInfnet.Domain", "AvaliacaoInfnet.Domain\AvaliacaoInfnet.Domain.csproj", "{950B9275-E8D8-466B-8DCA-96B0F0D56583}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaliacaoInfnet.Persistencia", "AvaliacaoInfnet.Persistencia\AvaliacaoInfnet.Persistencia.csproj", "{63EB095E-DA38-4ABB-BFE1-D83F79FDE63F}"
@@ -29,10 +27,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{17DA2635-78FA-4F50-8120-4717BFBF36BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{17DA2635-78FA-4F50-8120-4717BFBF36BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{17DA2635-78FA-4F50-8120-4717BFBF36BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{17DA2635-78FA-4F50-8120-4717BFBF36BA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{950B9275-E8D8-466B-8DCA-96B0F0D56583}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{950B9275-E8D8-466B-8DCA-96B0F0D56583}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{950B9275-E8D8-466B-8DCA-96B0F0D56583}.Release|Any CPU.ActiveCfg = Release|Any CPU
