@@ -2,6 +2,6 @@
 {
     public interface IMailer
     {
-        void SendEmail(string to, string content);
+        void SendEmail(string to, string content, string subject);
     }
 }
