@@ -17,7 +17,7 @@ namespace AvaliacaoInfnet.Web.Mapper
 
         public static PerfilViewModel BuildViewModelFrom(Perfil perfil)
         {
-            var viewModel = new PerfilViewModel(perfil.Id)
+            var viewModel = new PerfilViewModel()
             {
                 Descricao = perfil.Descricao,
                 Status = perfil.Status,
