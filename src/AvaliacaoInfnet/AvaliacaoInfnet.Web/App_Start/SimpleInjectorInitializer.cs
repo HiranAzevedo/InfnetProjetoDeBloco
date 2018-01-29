@@ -4,7 +4,7 @@ namespace AvaliacaoInfnet.Web.App_Start
 {
     using System.Reflection;
     using System.Web.Mvc;
-
+    using AvaliacaoInfnet.CC.IoC;
     using SimpleInjector;
     using SimpleInjector.Integration.Web;
     using SimpleInjector.Integration.Web.Mvc;
@@ -28,6 +28,7 @@ namespace AvaliacaoInfnet.Web.App_Start
 
         private static void InitializeContainer(Container container)
         {
+            BootStrapper.RegisterServices(container);
             //#error Register your services here (remove this line).
 
             // For instance:

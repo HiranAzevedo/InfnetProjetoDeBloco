@@ -96,7 +96,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppServiceBase.cs" />
-    <Compile Include="App_Start\SimpleInjectorInitializer.cs" />
     <Compile Include="AvaliacaoAppService.cs" />
     <Compile Include="EntrevistadoAppService.cs" />
     <Compile Include="Interface\IAppServiceBase.cs" />
