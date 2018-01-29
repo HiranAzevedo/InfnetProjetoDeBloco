@@ -18,14 +18,14 @@ namespace AvaliacaoInfnet.Web.Models
         [Required]
         public string Email { get; set; }
 
-        [Required]
-        public string Telefone { get; set; }
+        //[Required]
+        //public string Telefone { get; set; }
 
         [Required]
         public bool Status { get; set; }
 
-        [Required]
-        public string Senha { get; set; }
+        //[Required]
+        //public string Senha { get; set; }
 
         public Dictionary<int, string> PerfilOptions { get; set; }
 

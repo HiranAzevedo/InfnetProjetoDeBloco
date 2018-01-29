@@ -15,8 +15,8 @@ namespace AvaliacaoInfnet.Web.Mapper
                 Email = viewModel.Email,
                 Nome = viewModel.Nome,
                 Status = viewModel.Status,
-                Telefone = viewModel.Telefone,
-                Senha = viewModel.Senha,
+                //Telefone = viewModel.Telefone,
+                //Senha = viewModel.Senha,
             };
 
             return entrevistado;
@@ -28,8 +28,8 @@ namespace AvaliacaoInfnet.Web.Mapper
             {
                 Email = entrevistado.Email,
                 Nome = entrevistado.Nome,
-                Senha = entrevistado.Senha,
-                Telefone = entrevistado.Telefone,
+                //Senha = entrevistado.Senha,
+                //Telefone = entrevistado.Telefone,
                 Status = entrevistado.Status,
                 PerfilOptions = AvaliablePerfis,
                 SelectedPerfis = entrevistado.Perfil.Select(x => x.Id).ToList(),
