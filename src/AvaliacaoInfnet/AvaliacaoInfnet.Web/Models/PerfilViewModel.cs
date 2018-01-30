@@ -4,10 +4,10 @@ namespace AvaliacaoInfnet.Web.Models
 {
     public class PerfilViewModel
     {
-        //public PerfilViewModel()
-        //{
-        //    //ReferenceId = referenceId;
-        //}
+        public PerfilViewModel(int referenceId)
+        {
+            ReferenceId = referenceId;
+        }
 
         [Required]
         public string Descricao { get; set; }
