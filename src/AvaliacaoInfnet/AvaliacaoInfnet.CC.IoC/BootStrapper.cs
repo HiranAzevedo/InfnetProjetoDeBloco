@@ -23,18 +23,21 @@ namespace AvaliacaoInfnet.CC.IoC
             container.Register<IPerfilAppService, PerfilAppService>(Lifestyle.Scoped);
             container.Register<IPerguntaAppService, PerguntaAppService>(Lifestyle.Scoped);
             container.Register<IEntrevistadoAppService, EntrevistadoAppService>(Lifestyle.Scoped);
+            container.Register<ITipoRespostaAppService,TipoRespostaAppService>(Lifestyle.Scoped);
 
             //Domain
             container.Register<IAvaliacaoService, AvaliacaoService>(Lifestyle.Scoped);
             container.Register<IPerguntaService, PerguntaService>(Lifestyle.Scoped);
             container.Register<IPerfilService, PerfilService>(Lifestyle.Scoped);
             container.Register<IEntrevistadoService, EntrevistadoService>(Lifestyle.Scoped);
+            container.Register<ITipoRespostaService, TipoRespostaService>(Lifestyle.Scoped);
 
             //Infra
             container.Register<IAvaliacaoRepository, AvaliacaoRepository>(Lifestyle.Scoped);
             container.Register<IPerguntaRepository, PerguntaRepository>(Lifestyle.Scoped);
             container.Register<IPerfilRepository, PerfilRepository>(Lifestyle.Scoped);
             container.Register<IEntrevistadoRepository, EntrevistadoRepository>(Lifestyle.Scoped);
+            container.Register<ITipoRespostaRepository, TipoRespostaRepository>(Lifestyle.Scoped);
             container.Register<AvaliacaoInfnetContext>(Lifestyle.Scoped);
         }
     }

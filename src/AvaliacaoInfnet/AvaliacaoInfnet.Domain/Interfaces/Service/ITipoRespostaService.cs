@@ -1,6 +1,6 @@
 ﻿namespace AvaliacaoInfnet.Domain.Interfaces.Service
 {
-    public interface ITipoRespostaService
+    public interface ITipoRespostaService :  IServiceBase<TipoResposta>
     {
 		//teste
     }

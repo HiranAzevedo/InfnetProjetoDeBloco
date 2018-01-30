@@ -107,6 +107,7 @@
     <Compile Include="PerfilAppService.cs" />
     <Compile Include="PerguntaAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TipoRespostaAppService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AvaliacaoInfnet.Domain\AvaliacaoInfnet.Domain.csproj">
