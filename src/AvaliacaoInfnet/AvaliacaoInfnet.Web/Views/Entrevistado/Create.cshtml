@@ -6,13 +6,12 @@
 
 <h2>Create</h2>
 
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>EntrevistadoViewModel</h4>
+        <h4>Entrevistado</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -44,8 +43,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Perfis)
             <div class="col-md-10">
-                @{ IEnumerable<SelectListItem> perfilList = ViewBag.perfilList;}
-                @Html.ListBoxFor(x => x.SelectedPerfil, perfilList)
+                @Html.ListBox(nameof(Model.SelectedPerfil), ViewBag.perfilList as IEnumerable<SelectListItem>)
                 @Html.ValidationMessageFor(model => model.Perfis, "", new { @class = "text-danger" })
             </div>
         </div>

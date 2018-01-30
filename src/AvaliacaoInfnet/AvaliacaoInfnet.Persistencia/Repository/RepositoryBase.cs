@@ -9,7 +9,7 @@ namespace AvaliacaoInfnet.Persistencia.Repository
 {
     public class RepositoryBase<TEntity> : IDisposable, IRepositoryBase<TEntity> where TEntity : class
     {
-        protected AvaliacaoInfnetContext Db = new AvaliacaoInfnetContext();
+        protected readonly AvaliacaoInfnetContext Db = new AvaliacaoInfnetContext();
 
         public void Add(TEntity obj)
         {
@@ -24,8 +24,7 @@ namespace AvaliacaoInfnet.Persistencia.Repository
 
         public IEnumerable<TEntity> GetAll()
         {
-            return Db.Set<TEntity>().ToList();
-            //return Db.Set<TEntity>().AsNoTracking().ToList(); // Não usa LazyLoad se não há tracking.
+            return Db.Set<TEntity>().AsNoTracking().ToList();
         }
 
         public TEntity GetById(int id)

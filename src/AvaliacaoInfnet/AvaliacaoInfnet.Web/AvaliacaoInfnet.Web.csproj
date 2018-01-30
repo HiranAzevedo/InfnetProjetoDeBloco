@@ -278,6 +278,7 @@
     <Content Include="Views\Perfil\Delete.cshtml" />
     <Content Include="Views\Entrevistado\Index.cshtml" />
     <Content Include="Views\Pergunta\Create.cshtml" />
+    <Content Include="Views\Entrevistado\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

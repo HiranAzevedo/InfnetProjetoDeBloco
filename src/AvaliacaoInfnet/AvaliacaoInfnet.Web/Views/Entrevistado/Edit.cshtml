@@ -6,13 +6,12 @@
 
 <h2>Edit</h2>
 
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>EntrevistadoViewModel</h4>
+        <h4>Entrevistados</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -38,6 +37,14 @@
                     @Html.EditorFor(model => model.Status)
                     @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
                 </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Perfis, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.ListBox(nameof(Model.SelectedPerfil), ViewBag.perfilList as IEnumerable<SelectListItem>)
+                @Html.ValidationMessageFor(model => model.Perfis, "", new { @class = "text-danger" })
             </div>
         </div>
 
