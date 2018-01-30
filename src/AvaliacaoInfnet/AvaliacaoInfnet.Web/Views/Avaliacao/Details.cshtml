@@ -51,6 +51,10 @@
         <dd>
             @Html.DisplayFor(model => model.DataFim)
         </dd>
+
+        <dd>
+            @Html.ActionLink("Enviar e-mail", "Enviar", new { id = Model.ReferenceId })
+        </dd>
     </dl>
 </div>
 <p>
