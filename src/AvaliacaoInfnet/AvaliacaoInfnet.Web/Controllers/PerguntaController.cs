@@ -1,6 +1,7 @@
 ﻿using AvaliacaoInfnet.Application.Interface;
 using AvaliacaoInfnet.Web.Mapper;
 using AvaliacaoInfnet.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -33,86 +34,167 @@ namespace AvaliacaoInfnet.Web.Controllers
             return View(perguntas);
         }
 
-        public ActionResult Details(int? id)
+        public ActionResult Details(int id)
         {
             var allTipoRespostas = tipoRespostaApp.GetAll().ToList();
-
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            var pergunta = perguntaApp.GetById(id.Value);
-            var perguntaViewModel = PerguntaMapper.BuildViewModelFrom(pergunta, allTipoRespostas);
-
-            if (pergunta == null)
-            {
-                return HttpNotFound();
-            }
-
-            return View(perguntaViewModel);
+            var viewModelResponse = PerguntaMapper.BuildViewModelFrom(perguntaApp.GetById(id), allTipoRespostas);
+            return View(viewModelResponse);
         }
 
+        // GET: Pergunta/Create
         public ActionResult Create()
         {
+            var tipoRespostaList = new List<SelectListItem>();
+            var allTipoResposta = tipoRespostaApp.GetAll();
+
+            foreach (var tipoResposta in allTipoResposta)
+            {
+                tipoRespostaList.Add(new SelectListItem
+                {
+                    Text = tipoResposta.Descricao,
+                    Selected = false,
+                    Value = tipoResposta.Id.ToString(),
+                });
+            }
+
+            ViewBag.TipoRespostaList = tipoRespostaList;
+
             return View();
         }
 
-        public ActionResult Edit(int? id)
+        // POST: PErgunta/Create
+        [HttpPost]
+        public ActionResult Create(PerguntaViewModel viewModel)
         {
-            var allTipoRespostas = tipoRespostaApp.GetAll().ToList();
-
-            if (id == null)
+            try
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                if (ModelState.IsValid)
+                {
+                    perguntaApp.Add(PerguntaMapper.ExtractFromViewModel(viewModel));
+                    return RedirectToAction(nameof(Index));
+                }
+                return View();
             }
-            var perguntaViewModel = PerguntaMapper.BuildViewModelFrom(perguntaApp.GetById(id.Value), allTipoRespostas);
-
-            if (perguntaViewModel == null)
+            catch (Exception)
             {
-                return HttpNotFound();
+                return View();
             }
-            return View(perguntaViewModel);
         }
 
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Descricao,Status,Perguntas")] PerguntaViewModel perguntaViewModel)
+        // GET: Pergunta/Edit/5
+        public ActionResult Edit(int id)
         {
-            if (ModelState.IsValid)
-            {
-                var pergunta = PerguntaMapper.ExtractFromViewModel(perguntaViewModel);
-                perguntaApp.Update(pergunta);
+            var pergunta = perguntaApp.GetById(id);
+            var viewModelResponse = PerguntaMapper.BuildViewModelFrom(pergunta, null);
 
-                return RedirectToAction(nameof(Index));
-            }
-            return View(perguntaViewModel);
+            return View(viewModelResponse);
         }
 
-        // GET: Perfil/Delete/5
-        public ActionResult Delete(int? id)
+        // POST: Pergunta/Edit/5
+        [HttpPost]
+        public ActionResult Edit(int id, PerguntaViewModel viewModel)
         {
-            if (id == null)
+            try
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                if (ModelState.IsValid)
+                {
+                    var pergunta = PerguntaMapper.ExtractFromViewModel(viewModel);
+                    pergunta.Id = id;
+                    perguntaApp.Update(pergunta);
+                    return RedirectToAction(nameof(Index));
+                }
+                return View();
             }
-            var pergunta = perguntaApp.GetById(id.Value);
-
-            var perguntaViewModel = PerguntaMapper.BuildViewModelFrom(pergunta);
-
-            if (perguntaViewModel == null)
+            catch (Exception)
             {
-                return HttpNotFound();
+                return View();
             }
-
-            return View(perguntaViewModel);
         }
 
-        // POST: Perfil/Delete/5
-        [HttpPost, ActionName(nameof(Delete))]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        // GET: Pergunta/Delete/5
+        public ActionResult Delete(int id)
         {
-            perguntaApp.Remove(perguntaApp.GetById(id));
-            return RedirectToAction(nameof(Index));
+            var viewModelResponse = PerguntaMapper.BuildViewModelFrom(perguntaApp.GetById(id), null);
+
+            return View(viewModelResponse);
         }
+
+        // POST: Pergunta/Delete/5
+        [HttpPost]
+        public ActionResult DeletePost(int id)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    perguntaApp.Remove(perguntaApp.GetById(id));
+
+                    return RedirectToAction(nameof(Index));
+                }
+                return View();
+            }
+            catch (Exception)
+            {
+                return View();
+            }
+        }
+
+        //public ActionResult Edit(int? id)
+        //{
+        //    var allTipoRespostas = tipoRespostaApp.GetAll().ToList();
+
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    var perguntaViewModel = PerguntaMapper.BuildViewModelFrom(perguntaApp.GetById(id.Value), allTipoRespostas);
+
+        //    if (perguntaViewModel == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(perguntaViewModel);
+        //}
+
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Edit([Bind(Include = "Descricao,Status,Perguntas")] PerguntaViewModel perguntaViewModel)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        var pergunta = PerguntaMapper.ExtractFromViewModel(perguntaViewModel);
+        //        perguntaApp.Update(pergunta);
+
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    return View(perguntaViewModel);
+        //}
+
+        //// GET: Perfil/Delete/5
+        //public ActionResult Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    var pergunta = perguntaApp.GetById(id.Value);
+
+        //    var perguntaViewModel = PerguntaMapper.BuildViewModelFrom(pergunta);
+
+        //    if (perguntaViewModel == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+
+        //    return View(perguntaViewModel);
+        //}
+
+        //// POST: Perfil/Delete/5
+        //[HttpPost, ActionName(nameof(Delete))]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteConfirmed(int id)
+        //{
+        //    perguntaApp.Remove(perguntaApp.GetById(id));
+        //    return RedirectToAction(nameof(Index));
+        //}
     }
 }

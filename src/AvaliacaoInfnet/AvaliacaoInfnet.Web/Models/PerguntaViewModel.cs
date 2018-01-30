@@ -19,6 +19,8 @@ namespace AvaliacaoInfnet.Web.Models
         //Tipo resposta
         [Required]
         public Dictionary<TipoResposta, bool> TipoRespostas { get; set; }
+                
+        public List<string> SelectedTipoResposta { get; set; }
 
     }
 }
