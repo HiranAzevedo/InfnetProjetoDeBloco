@@ -11,16 +11,18 @@ namespace AvaliacaoInfnet.Web.Mapper
             {
                 Descricao = viewModel.Descricao,
                 Status = viewModel.Status,
+                Id = viewModel.ReferenceId,
             };
             return perfil;
         }
 
         public static PerfilViewModel BuildViewModelFrom(Perfil perfil)
         {
-            var viewModel = new PerfilViewModel(perfil.Id)
+            var viewModel = new PerfilViewModel
             {
                 Descricao = perfil.Descricao,
                 Status = perfil.Status,
+                ReferenceId = perfil.Id,
             };
 
             return viewModel;

@@ -15,8 +15,8 @@ namespace AvaliacaoInfnet.Web.Mapper
                 Email = viewModel.Email,
                 Nome = viewModel.Nome,
                 Status = viewModel.Status,
-                //Telefone = viewModel.Telefone,
-                //Senha = viewModel.Senha,
+                Telefone = viewModel.Telefone,
+                Senha = viewModel.Senha,
             };
 
             return entrevistado;
@@ -24,15 +24,16 @@ namespace AvaliacaoInfnet.Web.Mapper
 
         public static EntrevistadoViewModel BuildViewModelFrom(Entrevistado entrevistado, Dictionary<int, string> AvaliablePerfis)
         {
-            var viewModel = new EntrevistadoViewModel(entrevistado.Id)
+            var viewModel = new EntrevistadoViewModel
             {
                 Email = entrevistado.Email,
                 Nome = entrevistado.Nome,
-                //Senha = entrevistado.Senha,
-                //Telefone = entrevistado.Telefone,
                 Status = entrevistado.Status,
                 PerfilOptions = AvaliablePerfis,
                 SelectedPerfis = entrevistado.Perfil.Select(x => x.Id).ToList(),
+                Id = entrevistado.Id,
+                Senha = entrevistado.Senha,
+                Telefone = entrevistado.Telefone,
             };
 
             return viewModel;

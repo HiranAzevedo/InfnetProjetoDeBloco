@@ -4,23 +4,31 @@ using AvaliacaoInfnet.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using System.Linq;
 
 namespace AvaliacaoInfnet.Web.Controllers
 {
     public class EntrevisatadoController : Controller
     {
         public readonly IEntrevistadoAppService entrevistadoApp;
+        public readonly IPerfilAppService perfilApp;
+
+        public EntrevisatadoController(IEntrevistadoAppService entrevistadoApp, IPerfilAppService perfilApp)
+        {
+            this.entrevistadoApp = entrevistadoApp;
+            this.perfilApp = perfilApp;
+        }
 
         // GET: Entrevisatado
         public ActionResult Index()
         {
             var viewModelResponse = new List<EntrevistadoViewModel>();
             var allEntrevistados = entrevistadoApp.GetAll();
+            var allPerfil = perfilApp.GetAll().ToDictionary(p => p.Id, p => p.Descricao);
 
-            //TODO colocar todos os valores ja existentes aqui de perfil
             foreach (var entrevistado in allEntrevistados)
             {
-                viewModelResponse.Add(EntrevistadoMapper.BuildViewModelFrom(entrevistado, new Dictionary<int, string>()));
+                viewModelResponse.Add(EntrevistadoMapper.BuildViewModelFrom(entrevistado, allPerfil));
             }
 
             return View(viewModelResponse);

@@ -60,7 +60,7 @@ namespace AvaliacaoInfnet.Web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Nome,SobreNome,NomeUsuario,Senha,Local")] PerfilViewModel perfilViewModel)
+        public ActionResult Create([Bind(Include = "Descricao,Status")] PerfilViewModel perfilViewModel)
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +94,7 @@ namespace AvaliacaoInfnet.Web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdConta,Nome,SobreNome,NomeUsuario,Senha,Local")] PerfilViewModel perfilViewModel)
+        public ActionResult Edit([Bind(Include = "Descricao,Status,ReferenceId")] PerfilViewModel perfilViewModel)
         {
             if (ModelState.IsValid)
             {
