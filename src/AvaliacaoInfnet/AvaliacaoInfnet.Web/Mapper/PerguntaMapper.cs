@@ -1,5 +1,7 @@
 ﻿using AvaliacaoInfnet.Domain;
 using AvaliacaoInfnet.Web.Models;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace AvaliacaoInfnet.Web.Mapper
 {
@@ -15,13 +17,29 @@ namespace AvaliacaoInfnet.Web.Mapper
             return pergunta;
         }
 
-        public static PerguntaViewModel BuildViewModelFrom(Pergunta pergunta)
+        public static PerguntaViewModel BuildViewModelFrom(Pergunta pergunta, ICollection<TipoResposta> tipoRespostas = null )
         {
-            var viewModel = new PerguntaViewModel(pergunta.Id)
+            var viewModel = new PerguntaViewModel()
             {
                 Descricao = pergunta.Descricao,
-                Status = pergunta.Status,
+                Status = pergunta.Status,               
             };
+
+            if (tipoRespostas != null)
+            {
+                //Adiciona os tiposRespostas
+                foreach (var tipo in tipoRespostas)
+                {
+                    if (pergunta.TipoRespostas.Contains(tipo))//Caso esteja selecionado
+                    {
+                        viewModel.TipoRespostas.Add(tipo, true);
+                    }
+                    else
+                    {
+                        viewModel.TipoRespostas.Add(tipo, false);
+                    }
+                }
+            }
 
             return viewModel;
         }

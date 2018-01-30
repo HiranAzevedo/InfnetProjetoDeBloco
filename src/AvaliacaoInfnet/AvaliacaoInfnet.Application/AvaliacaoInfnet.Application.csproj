@@ -103,6 +103,7 @@
     <Compile Include="Interface\IEntrevistadoAppService.cs" />
     <Compile Include="Interface\IPerfilAppService.cs" />
     <Compile Include="Interface\IPerguntaAppService.cs" />
+    <Compile Include="Interface\ITipoRespostaAppService.cs" />
     <Compile Include="PerfilAppService.cs" />
     <Compile Include="PerguntaAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

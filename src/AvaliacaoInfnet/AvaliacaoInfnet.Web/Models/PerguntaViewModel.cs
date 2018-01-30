@@ -1,21 +1,24 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using AvaliacaoInfnet.Domain;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace AvaliacaoInfnet.Web.Models
 {
     public class PerguntaViewModel
-    {
-        public PerguntaViewModel(int referenceId)
-        {
-            ReferenceId = referenceId;
-        }
-
+    {      
         [Required]
         public string Descricao { get; set; }
 
         [Required]
         public bool Status { get; set; }
 
+        [HiddenInput(DisplayValue = false)]
+        public int ReferenceId { get; set; }
+
+        //Tipo resposta
         [Required]
-        public readonly int ReferenceId;
+        public Dictionary<TipoResposta, bool> TipoRespostas { get; set; }
+
     }
 }

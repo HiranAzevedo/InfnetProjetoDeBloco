@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AvaliacaoInfnet.Domain;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace AvaliacaoInfnet.Web.Models
@@ -29,9 +31,9 @@ namespace AvaliacaoInfnet.Web.Models
         //[Required]
         //public virtual Perfil Perfil { get; set; }
 
-        ////pergunta
-        //[Required]
-        //public virtual ICollection<Pergunta> Perguntas { get; set; }
+        //pergunta
+        [Required]
+        public virtual ICollection<Pergunta> Perguntas { get; set; }
 
         //[Required]
         //public readonly int ReferenceId;
