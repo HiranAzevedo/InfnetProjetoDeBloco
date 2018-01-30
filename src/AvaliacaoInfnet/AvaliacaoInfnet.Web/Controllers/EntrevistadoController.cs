@@ -8,12 +8,12 @@ using System.Linq;
 
 namespace AvaliacaoInfnet.Web.Controllers
 {
-    public class EntrevisatadoController : Controller
+    public class EntrevistadoController : Controller
     {
         public readonly IEntrevistadoAppService entrevistadoApp;
         public readonly IPerfilAppService perfilApp;
 
-        public EntrevisatadoController(IEntrevistadoAppService entrevistadoApp, IPerfilAppService perfilApp)
+        public EntrevistadoController(IEntrevistadoAppService entrevistadoApp, IPerfilAppService perfilApp)
         {
             this.entrevistadoApp = entrevistadoApp;
             this.perfilApp = perfilApp;
@@ -24,7 +24,7 @@ namespace AvaliacaoInfnet.Web.Controllers
         {
             var viewModelResponse = new List<EntrevistadoViewModel>();
             var allEntrevistados = entrevistadoApp.GetAll();
-            var allPerfil = perfilApp.GetAll().ToDictionary(p => p.Id, p => p.Descricao);
+            var allPerfil = perfilApp.GetAll().ToList();
 
             foreach (var entrevistado in allEntrevistados)
             {
@@ -37,13 +37,29 @@ namespace AvaliacaoInfnet.Web.Controllers
         // GET: Entrevisatado/Details/5
         public ActionResult Details(int id)
         {
-            var viewModelResponse = EntrevistadoMapper.BuildViewModelFrom(entrevistadoApp.GetById(id), new Dictionary<int, string>());
+            var allPerfil = perfilApp.GetAll().ToList();
+            var viewModelResponse = EntrevistadoMapper.BuildViewModelFrom(entrevistadoApp.GetById(id), allPerfil);
             return View(viewModelResponse);
         }
 
         // GET: Entrevisatado/Create
         public ActionResult Create()
         {
+            var perfilList = new List<SelectListItem>();
+            var allPerfis = perfilApp.GetAll();
+
+            foreach (var perfil in allPerfis)
+            {
+                perfilList.Add(new SelectListItem
+                {
+                    Text = perfil.Descricao,
+                    Selected = false,
+                    Value = perfil.Id.ToString(),
+                });
+            }
+
+            ViewBag.PerfilList = perfilList;
+
             return View();
         }
 
@@ -71,7 +87,7 @@ namespace AvaliacaoInfnet.Web.Controllers
         public ActionResult Edit(int id)
         {
             var entrevistado = entrevistadoApp.GetById(id);
-            var viewModelResponse = EntrevistadoMapper.BuildViewModelFrom(entrevistado, new Dictionary<int, string>());
+            var viewModelResponse = EntrevistadoMapper.BuildViewModelFrom(entrevistado, null);
 
             return View(viewModelResponse);
         }
@@ -100,7 +116,7 @@ namespace AvaliacaoInfnet.Web.Controllers
         // GET: Entrevisatado/Delete/5
         public ActionResult Delete(int id)
         {
-            var viewModelResponse = EntrevistadoMapper.BuildViewModelFrom(entrevistadoApp.GetById(id), new Dictionary<int, string>());
+            var viewModelResponse = EntrevistadoMapper.BuildViewModelFrom(entrevistadoApp.GetById(id), null);
 
             return View(viewModelResponse);
         }

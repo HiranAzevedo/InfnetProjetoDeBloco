@@ -34,6 +34,18 @@
             @Html.DisplayFor(model => model.Status)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Perfis)
+        </dt>
+
+        @foreach (var perfil in Model.Perfis)
+        {
+            <dd>
+                @perfil.Key.Descricao
+            </dd>
+        }
+
+
     </dl>
 </div>
 <p>

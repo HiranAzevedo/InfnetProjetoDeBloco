@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using AvaliacaoInfnet.Domain;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
@@ -24,9 +25,9 @@ namespace AvaliacaoInfnet.Web.Models
         [Required]
         public string Senha { get; set; }
 
-        public Dictionary<int, string> PerfilOptions { get; set; }
-
         [Required]
-        public List<int> SelectedPerfis { get; set; }
+        public Dictionary<Perfil, bool> Perfis { get; set; }
+
+        public List<string> SelectedPerfil { get; set; }
     }
 }

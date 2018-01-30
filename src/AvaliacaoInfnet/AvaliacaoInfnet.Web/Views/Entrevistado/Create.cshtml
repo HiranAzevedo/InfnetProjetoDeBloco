@@ -7,10 +7,10 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>EntrevistadoViewModel</h4>
         <hr />
@@ -38,6 +38,15 @@
                     @Html.EditorFor(model => model.Status)
                     @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
                 </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Perfis)
+            <div class="col-md-10">
+                @{ IEnumerable<SelectListItem> perfilList = ViewBag.perfilList;}
+                @Html.ListBoxFor(x => x.SelectedPerfil, perfilList)
+                @Html.ValidationMessageFor(model => model.Perfis, "", new { @class = "text-danger" })
             </div>
         </div>
 

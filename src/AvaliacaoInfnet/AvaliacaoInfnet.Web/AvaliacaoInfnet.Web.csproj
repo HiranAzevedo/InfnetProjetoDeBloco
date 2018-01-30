@@ -178,7 +178,7 @@
     <Compile Include="App_Start\SimpleInjectorInitializer.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AvaliacaoController.cs" />
-    <Compile Include="Controllers\EntrevisatadoController.cs" />
+    <Compile Include="Controllers\EntrevistadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PerfilController.cs" />
     <Compile Include="Controllers\PerguntaController.cs" />
@@ -268,15 +268,15 @@
     <Content Include="Views\Pergunta\Details.cshtml" />
     <Content Include="Views\Pergunta\Edit.cshtml" />
     <Content Include="Views\Pergunta\Index.cshtml" />
-    <Content Include="Views\Entrevisatado\Create.cshtml" />
-    <Content Include="Views\Entrevisatado\Edit.cshtml" />
-    <Content Include="Views\Entrevisatado\Details.cshtml" />
+    <Content Include="Views\Entrevistado\Create.cshtml" />
+    <Content Include="Views\Entrevistado\Edit.cshtml" />
+    <Content Include="Views\Entrevistado\Details.cshtml" />
     <Content Include="Scripts\umd\popper-utils.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Views\Perfil\Delete.cshtml" />
-    <Content Include="Views\Entrevisatado\Index.cshtml" />
+    <Content Include="Views\Entrevistado\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

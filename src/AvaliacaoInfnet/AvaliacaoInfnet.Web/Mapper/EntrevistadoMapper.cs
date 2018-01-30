@@ -22,19 +22,33 @@ namespace AvaliacaoInfnet.Web.Mapper
             return entrevistado;
         }
 
-        public static EntrevistadoViewModel BuildViewModelFrom(Entrevistado entrevistado, Dictionary<int, string> AvaliablePerfis)
+        public static EntrevistadoViewModel BuildViewModelFrom(Entrevistado entrevistado, List<Perfil> allPerfil)
         {
+            var perfilEntrevistadoViewModel = new Dictionary<Perfil, bool>();
+
             var viewModel = new EntrevistadoViewModel
             {
                 Email = entrevistado.Email,
                 Nome = entrevistado.Nome,
                 Status = entrevistado.Status,
-                PerfilOptions = AvaliablePerfis,
-                SelectedPerfis = entrevistado.Perfil.Select(x => x.Id).ToList(),
                 Id = entrevistado.Id,
                 Senha = entrevistado.Senha,
                 Telefone = entrevistado.Telefone,
             };
+
+            foreach (var perfil in allPerfil)
+            {
+                if (entrevistado.Perfil.Contains(perfil))
+                {
+                    perfilEntrevistadoViewModel.Add(perfil, true);
+                }
+                else
+                {
+                    perfilEntrevistadoViewModel.Add(perfil, false);
+                }
+            }
+
+            viewModel.Perfis = perfilEntrevistadoViewModel;
 
             return viewModel;
         }
