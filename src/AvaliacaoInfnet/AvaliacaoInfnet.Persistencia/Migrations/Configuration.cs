@@ -1,5 +1,6 @@
 namespace AvaliacaoInfnet.Persistencia.Migrations
 {
+    using AvaliacaoInfnet.Domain;
     using System.Data.Entity.Migrations;
 
     internal sealed class Configuration : DbMigrationsConfiguration<Context.AvaliacaoInfnetContext>
@@ -26,6 +27,16 @@ namespace AvaliacaoInfnet.Persistencia.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            context.TipoRespostas.AddOrUpdate(
+                p => p.Descricao,
+                new TipoResposta { Descricao = "Concordo totalmente" },
+                new TipoResposta { Descricao = "Concordo" },
+                new TipoResposta { Descricao = "Não concordo nem discordo" },
+                new TipoResposta { Descricao = "Discordo" },
+                new TipoResposta { Descricao = "Discordo totalmente" },
+                new TipoResposta { Descricao = "Não sei avaliar" }
+            );
         }
     }
 }
