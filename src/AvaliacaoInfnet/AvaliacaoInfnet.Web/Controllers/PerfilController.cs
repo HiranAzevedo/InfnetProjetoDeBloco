@@ -21,12 +21,14 @@ namespace AvaliacaoInfnet.Web.Controllers
         public ActionResult Index()
         {
             var allPerfis = perfilApp.GetAll().ToList();
-            var perfis = new List<PerfilViewModel>();
+            var perfilViewModel = new List<PerfilViewModel>();
+
             for (int i = 0; i < allPerfis.Count; i++)
             {
-                perfis.Add(PerfilMapper.BuildViewModelFrom(allPerfis[i]));
+                perfilViewModel.Add(PerfilMapper.BuildViewModelFrom(allPerfis[i]));
             }
-            return View(allPerfis);
+
+            return View(perfilViewModel);
         }
 
         // GET: Perfil/Details/5

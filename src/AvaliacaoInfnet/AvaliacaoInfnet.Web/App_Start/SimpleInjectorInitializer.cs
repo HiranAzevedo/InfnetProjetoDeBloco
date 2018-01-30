@@ -5,7 +5,7 @@ namespace AvaliacaoInfnet.Web.App_Start
     using System.Reflection;
     using System.Web.Mvc;
     using AvaliacaoInfnet.CC.IoC;
-    using SimpleInjector;
+    using SimpleInjector; 
     using SimpleInjector.Integration.Web;
     using SimpleInjector.Integration.Web.Mvc;
 
