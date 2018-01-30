@@ -11,20 +11,23 @@ namespace AvaliacaoInfnet.Web.Controllers
     public class PerguntaController : Controller
     {
         public readonly IPerguntaAppService perguntaApp;
+        public readonly ITipoRespostaAppService tipoRespostaApp;
 
-        public PerguntaController(IPerguntaAppService perguntaApp)
+        public PerguntaController(IPerguntaAppService perguntaApp, ITipoRespostaAppService tipoRespostaApp)
         {
             this.perguntaApp = perguntaApp;
+            this.tipoRespostaApp = tipoRespostaApp;
         }
 
         public ActionResult Index()
         {
             var allPerguntas = perguntaApp.GetAll().ToList();
-            var perguntas = new List<PerguntaViewModel>();
+            var allTipoRespostas = tipoRespostaApp.GetAll().ToList();
+            var perguntas = new List<PerguntaViewModel>();           
 
             for (int i = 0; i < allPerguntas.Count; i++)
             {
-                perguntas.Add(PerguntaMapper.BuildViewModelFrom(allPerguntas[i]));
+                perguntas.Add(PerguntaMapper.BuildViewModelFrom(allPerguntas[i], allTipoRespostas));
             }
 
             return View(perguntas);
@@ -32,12 +35,14 @@ namespace AvaliacaoInfnet.Web.Controllers
 
         public ActionResult Details(int? id)
         {
+            var allTipoRespostas = tipoRespostaApp.GetAll().ToList();
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             var pergunta = perguntaApp.GetById(id.Value);
-            var perguntaViewModel = PerguntaMapper.BuildViewModelFrom(pergunta);
+            var perguntaViewModel = PerguntaMapper.BuildViewModelFrom(pergunta, allTipoRespostas);
 
             if (pergunta == null)
             {
@@ -54,11 +59,13 @@ namespace AvaliacaoInfnet.Web.Controllers
 
         public ActionResult Edit(int? id)
         {
+            var allTipoRespostas = tipoRespostaApp.GetAll().ToList();
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var perguntaViewModel = PerguntaMapper.BuildViewModelFrom(perguntaApp.GetById(id.Value));
+            var perguntaViewModel = PerguntaMapper.BuildViewModelFrom(perguntaApp.GetById(id.Value), allTipoRespostas);
 
             if (perguntaViewModel == null)
             {
@@ -68,7 +75,7 @@ namespace AvaliacaoInfnet.Web.Controllers
         }
 
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdConta,Nome,SobreNome,NomeUsuario,Senha,Local")] PerguntaViewModel perguntaViewModel)
+        public ActionResult Edit([Bind(Include = "Descricao,Status,Perguntas")] PerguntaViewModel perguntaViewModel)
         {
             if (ModelState.IsValid)
             {
