@@ -1,5 +1,6 @@
 ﻿using AvaliacaoInfnet.Application;
 using AvaliacaoInfnet.Application.Interface;
+using AvaliacaoInfnet.Domain.Mailer;
 using AvaliacaoInfnet.Web.Mapper;
 using AvaliacaoInfnet.Web.Models;
 using System;
@@ -12,6 +13,7 @@ namespace AvaliacaoInfnet.Web.Controllers
     public class AvaliacaoController : Controller
     {
         public readonly IAvaliacaoAppService avaliacaoApp;
+        public readonly IPerfilAppService perfilApp;
 
         public AvaliacaoController(IAvaliacaoAppService avaliacaoApp)
         {
@@ -111,6 +113,28 @@ namespace AvaliacaoInfnet.Web.Controllers
             return View(avaliacaoVM);
         }
 
+        public ActionResult Enviar(int id)
+        {
+
+            Mailer mailer = new Mailer();
+
+            var avaliacao = avaliacaoApp.GetById(id);
+
+            var allPerfis = perfilApp.GetAll();
+
+            foreach (var perfil in allPerfis)
+            {
+                perfilList.Add(new SelectListItem
+                {
+                    Text = perfil.Descricao,
+                    Selected = false,
+                    Value = perfil.Id.ToString(),
+                });
+            }
+                        
+            return View();
+        }
+        
         // POST: PerfilConta/Delete/5
         [HttpPost, ActionName(nameof(Delete))]
         [ValidateAntiForgeryToken]
