@@ -1,12 +1,13 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
+    <title>@ViewBag.Title - Avaliação de Serviços</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -17,15 +18,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Avaliação de Serviços", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Início", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Início", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Avaliação", "Details", "Avaliacao")</li>
-                    <li>@Html.ActionLink("Pergunta", "Details", "Pergunta")</li>
-                    <li>@Html.ActionLink("Entrevistado", "Details", "Entrevistado")</li>
-                    <li>@Html.ActionLink("Perfil", "Details", "Perfil")</li>
+                    <li>@Html.ActionLink("Avaliação", "Index", "Avaliacao")</li>
+                    <li>@Html.ActionLink("Pergunta", "Index", "Pergunta")</li>
+                    <li>@Html.ActionLink("Resposta", "Index", "Resposta")</li>
+                    <li>@Html.ActionLink("Perfil", "Index", "Perfil")</li>
+                    <li>@Html.ActionLink("Usuário", "Index", "Usuario")</li>
                 </ul>
             </div>
         </div>
@@ -34,7 +35,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Meu Aplicativo ASP.NET</p>
+            <p>&copy; @DateTime.Now.Year - Avaliação de Serviços</p>
         </footer>
     </div>
 
