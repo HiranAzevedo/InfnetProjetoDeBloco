@@ -19,13 +19,10 @@ namespace AvaliacaoInfnet.Web.Models
         [Required]
         public bool Status { get; set; }
 
-        [Required]
         public string Telefone { get; set; }
 
-        [Required]
         public string Senha { get; set; }
 
-        [Required]
         public Dictionary<Perfil, bool> Perfis { get; set; }
 
         public List<string> SelectedPerfil { get; set; }

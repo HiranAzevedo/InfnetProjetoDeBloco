@@ -116,7 +116,7 @@ namespace AvaliacaoInfnet.Web.Controllers
         public ActionResult Enviar(int id)
         {
 
-            Mailer mailer = new Mailer();
+            var mailer = new Mailer();
 
             var avaliacao = avaliacaoApp.GetById(id);
 
@@ -124,17 +124,11 @@ namespace AvaliacaoInfnet.Web.Controllers
 
             foreach (var perfil in allPerfis)
             {
-                perfilList.Add(new SelectListItem
-                {
-                    Text = perfil.Descricao,
-                    Selected = false,
-                    Value = perfil.Id.ToString(),
-                });
             }
-                        
+
             return View();
         }
-        
+
         // POST: PerfilConta/Delete/5
         [HttpPost, ActionName(nameof(Delete))]
         [ValidateAntiForgeryToken]

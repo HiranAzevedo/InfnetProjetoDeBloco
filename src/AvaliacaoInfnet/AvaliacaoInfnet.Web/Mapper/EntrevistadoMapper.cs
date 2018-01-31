@@ -7,7 +7,7 @@ namespace AvaliacaoInfnet.Web.Mapper
 {
     public class EntrevistadoMapper
     {
-        public static Entrevistado ExtractFromViewModel(EntrevistadoViewModel viewModel)
+        public static Entrevistado ExtractFromViewModel(EntrevistadoViewModel viewModel, List<Perfil> perfis)
         {
             var entrevistado = new Entrevistado
             {
@@ -17,7 +17,13 @@ namespace AvaliacaoInfnet.Web.Mapper
                 Status = viewModel.Status,
                 Telefone = viewModel.Telefone,
                 Senha = viewModel.Senha,
+                Perfil = new List<Perfil>(),
             };
+
+            if (viewModel.SelectedPerfil != null)
+            {
+                entrevistado.Perfil = perfis.Where(x => viewModel.SelectedPerfil.Contains(x.Id.ToString())).ToList();
+            }
 
             return entrevistado;
         }
@@ -36,15 +42,18 @@ namespace AvaliacaoInfnet.Web.Mapper
                 Telefone = entrevistado.Telefone,
             };
 
-            foreach (var perfil in allPerfil)
+            if (allPerfil != null)
             {
-                if (entrevistado.Perfil.Contains(perfil))
+                foreach (var perfil in allPerfil)
                 {
-                    perfilEntrevistadoViewModel.Add(perfil, true);
-                }
-                else
-                {
-                    perfilEntrevistadoViewModel.Add(perfil, false);
+                    if (entrevistado.Perfil.Any(x => x.Id == perfil.Id))
+                    {
+                        perfilEntrevistadoViewModel.Add(perfil, true);
+                    }
+                    else
+                    {
+                        perfilEntrevistadoViewModel.Add(perfil, false);
+                    }
                 }
             }
 

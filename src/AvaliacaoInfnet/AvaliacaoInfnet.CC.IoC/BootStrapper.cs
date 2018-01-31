@@ -38,7 +38,7 @@ namespace AvaliacaoInfnet.CC.IoC
             container.Register<IPerfilRepository, PerfilRepository>(Lifestyle.Scoped);
             container.Register<IEntrevistadoRepository, EntrevistadoRepository>(Lifestyle.Scoped);
             container.Register<ITipoRespostaRepository, TipoRespostaRepository>(Lifestyle.Scoped);
-            container.Register<AvaliacaoInfnetContext>(Lifestyle.Scoped);
+            container.Register<AvaliacaoInfnetContext>(Lifestyle.Singleton);
         }
     }
 }

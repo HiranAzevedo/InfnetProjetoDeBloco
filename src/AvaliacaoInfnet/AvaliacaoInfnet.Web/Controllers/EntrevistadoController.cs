@@ -45,6 +45,13 @@ namespace AvaliacaoInfnet.Web.Controllers
         // GET: Entrevisatado/Create
         public ActionResult Create()
         {
+            BuildCreatePerfilSelectList();
+
+            return View();
+        }
+
+        private void BuildCreatePerfilSelectList()
+        {
             var perfilList = new List<SelectListItem>();
             var allPerfis = perfilApp.GetAll();
 
@@ -59,8 +66,6 @@ namespace AvaliacaoInfnet.Web.Controllers
             }
 
             ViewBag.PerfilList = perfilList;
-
-            return View();
         }
 
         // POST: Entrevisatado/Create
@@ -69,16 +74,20 @@ namespace AvaliacaoInfnet.Web.Controllers
         {
             try
             {
+                var allPerfis = perfilApp.GetAll().ToList();
                 if (ModelState.IsValid)
                 {
-                    entrevistadoApp.Add(EntrevistadoMapper.ExtractFromViewModel(viewModel));
+                    var entrevistado = EntrevistadoMapper.ExtractFromViewModel(viewModel, allPerfis);
+                    entrevistadoApp.Add(entrevistado);
                     return RedirectToAction(nameof(Index));
                 }
 
+                BuildCreatePerfilSelectList();
                 return View();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                BuildCreatePerfilSelectList();
                 return View();
             }
         }
@@ -87,7 +96,21 @@ namespace AvaliacaoInfnet.Web.Controllers
         public ActionResult Edit(int id)
         {
             var entrevistado = entrevistadoApp.GetById(id);
-            var viewModelResponse = EntrevistadoMapper.BuildViewModelFrom(entrevistado, null);
+            var allPerfis = perfilApp.GetAll().ToList();
+            var viewModelResponse = EntrevistadoMapper.BuildViewModelFrom(entrevistado, allPerfis);
+
+            var perfilList = new List<SelectListItem>();
+            foreach (var perfil in viewModelResponse.Perfis)
+            {
+                perfilList.Add(new SelectListItem
+                {
+                    Text = perfil.Key.Descricao,
+                    Selected = perfil.Value,
+                    Value = perfil.Key.Id.ToString(),
+                });
+            }
+
+            ViewBag.PerfilList = perfilList;
 
             return View(viewModelResponse);
         }
@@ -100,15 +123,17 @@ namespace AvaliacaoInfnet.Web.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var entrevistado = EntrevistadoMapper.ExtractFromViewModel(viewModel);
+                    var allPerfil = perfilApp.GetAll().ToList();
+                    var entrevistado = EntrevistadoMapper.ExtractFromViewModel(viewModel, allPerfil);
                     entrevistado.Id = id;
                     entrevistadoApp.Update(entrevistado);
                     return RedirectToAction(nameof(Index));
                 }
                 return View();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                string error = ex.Message;
                 return View();
             }
         }
@@ -123,20 +148,22 @@ namespace AvaliacaoInfnet.Web.Controllers
 
         // POST: Entrevisatado/Delete/5
         [HttpPost]
-        public ActionResult DeletePost(int id)
+        public ActionResult Delete(int id, FormCollection form)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    entrevistadoApp.Remove(entrevistadoApp.GetById(id));
+                    var entrevistado = entrevistadoApp.GetById(id);
+                    entrevistadoApp.Remove(entrevistado);
 
                     return RedirectToAction(nameof(Index));
                 }
                 return View();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                string message = ex.Message;
                 return View();
             }
         }
