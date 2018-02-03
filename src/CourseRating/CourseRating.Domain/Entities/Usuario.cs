@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CourseRating.Domain
+namespace CourseRating.Domain.Entities
 {
-    public class Class1
+    public class Usuario :  Pessoa
     {
+      
+        public int Telefone { get; set; }
     }
 }
