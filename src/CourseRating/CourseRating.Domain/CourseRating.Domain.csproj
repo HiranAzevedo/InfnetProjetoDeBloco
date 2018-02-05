@@ -41,16 +41,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Aluno.cs" />
+    <Compile Include="Entities\Avaliacao.cs" />
+    <Compile Include="Entities\AvaliacaoResposta.cs" />
     <Compile Include="Entities\Categoria.cs" />
     <Compile Include="Entities\Coordernador.cs" />
     <Compile Include="Entities\Curso.cs" />
+    <Compile Include="Entities\Modulo.cs" />
     <Compile Include="Entities\Pergunta.cs" />
-    <Compile Include="Entities\Pessoa.cs" />
     <Compile Include="Entities\TipoResposta.cs" />
     <Compile Include="Entities\TipoUsuario.cs" />
     <Compile Include="Entities\Turma.cs" />
     <Compile Include="Entities\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

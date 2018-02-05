@@ -14,6 +14,10 @@ namespace CourseRating.Domain.Entities
 
         public bool Status { get; set; }
 
+        public ICollection<Modulo> Modulos { get; set; }
+
         public ICollection<Aluno> Alunos { get; set; }
+
+        public Curso Curso { get; set; }
     }
 }

@@ -6,16 +6,14 @@ using System.Threading.Tasks;
 
 namespace CourseRating.Domain.Entities
 {
-    public class Categoria
+   public  class Avaliacao
     {
         public string Id { get; set; }
 
         public string Descricao { get; set; }
 
-        public bool Status { get; set; }
+        public string Status { get; set; }
 
-        public ICollection<Pergunta> Perguntas { get; set; }
-
-        public ICollection<Avaliacao> Avaliacoes { get; set; }
+        public ICollection<Categoria> Categorias { get; set; }
     }
 }

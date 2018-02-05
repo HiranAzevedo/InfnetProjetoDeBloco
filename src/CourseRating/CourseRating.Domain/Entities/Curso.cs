@@ -15,7 +15,5 @@ namespace CourseRating.Domain.Entities
 
         public ICollection<Turma> Turmas { get; set; }
 
-
-
     }
 }

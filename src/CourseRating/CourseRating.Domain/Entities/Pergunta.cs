@@ -14,6 +14,8 @@ namespace CourseRating.Domain.Entities
 
         public bool Status { get; set; }
 
-        public Categoria Categoria { get; set; }
+        public ICollection<TipoResposta> TipoRespostas { get; set; }
+
+        public ICollection<Categoria> Categorias { get; set; }
     }
 }

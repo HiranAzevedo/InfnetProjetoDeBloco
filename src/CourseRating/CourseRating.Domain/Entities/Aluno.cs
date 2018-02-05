@@ -10,6 +10,10 @@ namespace CourseRating.Domain.Entities
     {
         public int Matricula { get; set; }
 
-        public List<Curso> Cursos { get; set; }
+        public string Email { get; set; }
+
+        public string Status { get; set; }
+
+
     }
 }

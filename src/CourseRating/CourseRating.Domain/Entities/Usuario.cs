@@ -6,9 +6,16 @@ using System.Threading.Tasks;
 
 namespace CourseRating.Domain.Entities
 {
-    public class Usuario :  Pessoa
+    public class Usuario
     {
-      
-        public int Telefone { get; set; }
+        public string Cpf { get; set; }
+
+        public string Nome { get; set; }
+
+        public string Telefone { get; set; }
+
+        public string Sexo { get; set; }
+
+        public TipoUsuario TipoUsuario { get; set; }
     }
 }
