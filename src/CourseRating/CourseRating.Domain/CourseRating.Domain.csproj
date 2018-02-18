@@ -52,10 +52,21 @@
     <Compile Include="Entities\TipoUsuario.cs" />
     <Compile Include="Entities\Turma.cs" />
     <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="Interfaces\Repositories\IAlunoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IAvaliacaoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IAvaliacaoRespostaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ICategoriaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ICoordernadorRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ICursoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IModuloRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IPerguntaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IRepositoryBase.cs" />
+    <Compile Include="Interfaces\Repositories\ITipoRespostaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ITipoUsuarioRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ITurmaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IUsuarioRepository.cs" />
+    <Compile Include="Interfaces\Services\IServiceBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
