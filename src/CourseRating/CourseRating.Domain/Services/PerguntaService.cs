@@ -4,7 +4,7 @@ using CourseRating.Domain.Interfaces.Services;
 
 namespace CourseRating.Domain.Services
 {
-    class PerguntaService : ServiceBase<Pergunta>, IPerguntaService
+   public class PerguntaService : ServiceBase<Pergunta>, IPerguntaService
     {
         private readonly IPerguntaRepository PerguntaRepository;
 

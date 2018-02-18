@@ -40,7 +40,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\IAlunoAppService.cs" />
+    <Compile Include="Interface\IAvaliacaoAppService.cs" />
+    <Compile Include="Interface\IAvaliacaoRespostaAppService.cs" />
+    <Compile Include="Interface\ICategoriaAppService.cs" />
+    <Compile Include="Interface\ICoordernadorAppService.cs" />
+    <Compile Include="Interface\ICursoAppService.cs" />
+    <Compile Include="Interface\IModuloAppService.cs" />
+    <Compile Include="Interface\IPerguntaAppService.cs" />
+    <Compile Include="Interface\ITipoRespostaAppService.cs" />
+    <Compile Include="Interface\ITipoUsuarioAppService.cs" />
+    <Compile Include="Interface\ITurmaAppService.cs" />
+    <Compile Include="Interface\IUsuarioAppService.cs" />
+    <Compile Include="Services\AlunoAppService.cs" />
+    <Compile Include="Services\AppServiceBase.cs" />
+    <Compile Include="Interface\IAppServiceBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AvaliacaoAppService.cs" />
+    <Compile Include="Services\AvaliacaoRespostaAppService.cs" />
+    <Compile Include="Services\CategoriaAppService.cs" />
+    <Compile Include="Services\CoordernadorAppService.cs" />
+    <Compile Include="Services\CursoAppService.cs" />
+    <Compile Include="Services\ModuloAppService.cs" />
+    <Compile Include="Services\PerguntaAppService.cs" />
+    <Compile Include="Services\TipoRespostaAppService.cs" />
+    <Compile Include="Services\TipoUsuarioAppService.cs" />
+    <Compile Include="Services\TurmaAppService.cs" />
+    <Compile Include="Services\UsuarioAppService.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CourseRating.Domain\CourseRating.Domain.csproj">
+      <Project>{10c3dc84-a522-47a4-acef-45d73ff80164}</Project>
+      <Name>CourseRating.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

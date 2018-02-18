@@ -49,5 +49,19 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CourseRating.Application\CourseRating.Application.csproj">
+      <Project>{557E9B22-3054-49F2-9819-DA9F2ED76FF0}</Project>
+      <Name>CourseRating.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CourseRating.Data\CourseRating.Data.csproj">
+      <Project>{A82439AE-7B0A-46E3-9B40-04475DDFA3C1}</Project>
+      <Name>CourseRating.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CourseRating.Domain\CourseRating.Domain.csproj">
+      <Project>{10C3DC84-A522-47A4-ACEF-45D73FF80164}</Project>
+      <Name>CourseRating.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
