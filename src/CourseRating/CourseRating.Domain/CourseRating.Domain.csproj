@@ -65,8 +65,33 @@
     <Compile Include="Interfaces\Repositories\ITipoUsuarioRepository.cs" />
     <Compile Include="Interfaces\Repositories\ITurmaRepository.cs" />
     <Compile Include="Interfaces\Repositories\IUsuarioRepository.cs" />
+    <Compile Include="Interfaces\Services\IAlunoService.cs" />
+    <Compile Include="Interfaces\Services\IAvaliacaoRespostaService.cs" />
+    <Compile Include="Interfaces\Services\IAvaliacaoService.cs" />
+    <Compile Include="Interfaces\Services\ICategoriaService.cs" />
+    <Compile Include="Interfaces\Services\ICoordernadorService.cs" />
+    <Compile Include="Interfaces\Services\ICursoService.cs" />
+    <Compile Include="Interfaces\Services\IModuloService.cs" />
+    <Compile Include="Interfaces\Services\IPerguntaService.cs" />
     <Compile Include="Interfaces\Services\IServiceBase.cs" />
+    <Compile Include="Interfaces\Services\ITipoRespostaService.cs" />
+    <Compile Include="Interfaces\Services\ITipoUsuarioService.cs" />
+    <Compile Include="Interfaces\Services\ITurmaService.cs" />
+    <Compile Include="Interfaces\Services\IUsuarioService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AlunoService.cs" />
+    <Compile Include="Services\AvaliacaoRespostaService.cs" />
+    <Compile Include="Services\AvaliacaoService.cs" />
+    <Compile Include="Services\CategoriaService.cs" />
+    <Compile Include="Services\CoordernadorService.cs" />
+    <Compile Include="Services\CursoService.cs" />
+    <Compile Include="Services\ModuloService.cs" />
+    <Compile Include="Services\PerguntaService.cs" />
+    <Compile Include="Services\ServiceBase.cs" />
+    <Compile Include="Services\TipoRespostaService.cs" />
+    <Compile Include="Services\TipoUsuarioService.cs" />
+    <Compile Include="Services\TurmaService.cs" />
+    <Compile Include="Services\UsuarioService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
