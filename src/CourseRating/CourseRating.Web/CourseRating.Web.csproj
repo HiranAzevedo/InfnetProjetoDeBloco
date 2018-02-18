@@ -169,6 +169,7 @@
     <Compile Include="App_Start\SimpleInjectorInitializer.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -249,6 +250,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CourseRating.Application\CourseRating.Application.csproj">
+      <Project>{557E9B22-3054-49F2-9819-DA9F2ED76FF0}</Project>
+      <Name>CourseRating.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CourseRating.CC.IoC\CourseRating.CC.IoC.csproj">
       <Project>{9C01D319-B1DB-486B-B576-FAB24666413A}</Project>
       <Name>CourseRating.CC.IoC</Name>
