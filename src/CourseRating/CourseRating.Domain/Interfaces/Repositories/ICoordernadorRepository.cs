@@ -3,7 +3,7 @@ using System;
 
 namespace CourseRating.Domain.Interfaces.Repositories
 {
-    interface ICoordernadorRepository : IRepositoryBase<Coordernador>, IDisposable
+   public  interface ICoordernadorRepository : IRepositoryBase<Coordernador>, IDisposable
     {
     }
 }

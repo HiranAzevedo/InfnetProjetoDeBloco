@@ -3,7 +3,7 @@ using System;
 
 namespace CourseRating.Domain.Interfaces.Repositories
 {
-    interface IPerguntaRepository : IRepositoryBase<Pergunta>, IDisposable
+    public interface IPerguntaRepository : IRepositoryBase<Pergunta>, IDisposable
     {
     }
 }
