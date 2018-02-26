@@ -11,7 +11,6 @@ namespace CourseRating.Web.Mapper
             {
                 Email = viewModel.Email,
                 Matricula = viewModel.Matricula,
-                Status =  viewModel.Status,
                 //TODO Adicionar todos os atributos
             };
             return aluno;
@@ -23,7 +22,6 @@ namespace CourseRating.Web.Mapper
             var viewModel = new AlunoViewModel
             {
                 Email = aluno.Email,
-                Status = aluno.Status,
                 Matricula = aluno.Matricula,
                 //TODO Adicionar todos os atributos
             };

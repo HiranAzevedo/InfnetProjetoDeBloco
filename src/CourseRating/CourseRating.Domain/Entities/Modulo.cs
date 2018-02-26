@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System;
 
 namespace CourseRating.Domain.Entities
 {
@@ -6,11 +6,10 @@ namespace CourseRating.Domain.Entities
     {
         public string Id { get; set; }
 
-        public string Descricao { get; set; }
+        public string Nome { get; set; }
 
-        public bool Status { get; set; }
+        public DateTime DataInicio { get; set; }
 
-        public Turma Turma { get; set; }
-
+        public DateTime DataTermino { get; set; }
     }
 }

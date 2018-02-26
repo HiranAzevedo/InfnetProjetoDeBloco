@@ -8,11 +8,10 @@ using System.Threading.Tasks;
 
 namespace CourseRating.Data.Config
 {
-   public  class UsuarioConfiguration : EntityTypeConfiguration<Usuario>
+    public class UsuarioConfiguration : EntityTypeConfiguration<Usuario>
     {
         public UsuarioConfiguration()
         {
-            HasKey(x => x.Cpf);
         }
     }
 }

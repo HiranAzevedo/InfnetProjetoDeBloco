@@ -9,11 +9,7 @@ namespace CourseRating.Web.Mapper
         {
             var usuario = new Usuario
             {
-                Nome = viewModel.Nome,
-                Cpf = viewModel.Cpf,
-                Sexo = viewModel.Sexo,
-                Telefone = viewModel.Telefone,
-               //TODO adicionar tipo usuario
+                //TODO adicionar tipo usuario
             };
             return usuario;
         }
@@ -22,10 +18,6 @@ namespace CourseRating.Web.Mapper
         {
             var viewModel = new UsuarioViewModel
             {
-                Nome = usuario.Nome,
-                Cpf = usuario.Cpf,
-                Sexo = usuario.Sexo,
-                Telefone = usuario.Telefone,
                 //TODO adicionar tipo usuario
             };
 

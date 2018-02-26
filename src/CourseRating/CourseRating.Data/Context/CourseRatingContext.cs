@@ -28,14 +28,14 @@ namespace CourseRating.Data.Context
             /* Quando for verificar se houve mudança nas entidades, quando estiver inserindo, dizer que é a data atual. Quando for atualização, dizer que não houve mudança na data, que a data atual é uma data de modificação, mas estamos salvando em banco a de criação, que não se altera */
             foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataCadastro") != null))
             {
-                if (entry.State == EntityState.Added)
+                switch (entry.State)
                 {
-                    entry.Property("DataCadastro").CurrentValue = DateTime.Now;
-                }
-
-                if (entry.State == EntityState.Modified)
-                {
-                    entry.Property("DataCadastro").IsModified = false;
+                    case EntityState.Added:
+                        entry.Property("DataCadastro").CurrentValue = DateTime.Now;
+                        break;
+                    case EntityState.Modified:
+                        entry.Property("DataCadastro").IsModified = false;
+                        break;
                 }
             }
             return base.SaveChanges();
@@ -45,21 +45,9 @@ namespace CourseRating.Data.Context
 
         public DbSet<Avaliacao> Avaliacao { get; set; }
 
-        public DbSet<AvaliacaoResposta> AvaliacaoResposta { get; set; }
-
-        public DbSet<Categoria> Categoria { get; set; }
-
-        public DbSet<Coordernador> Coordernador { get; set; }
-
         public DbSet<Curso> Curso { get; set; }
 
         public DbSet<Modulo> Modulo { get; set; }
-
-        public DbSet<Pergunta> Pergunta { get; set; }
-
-        public DbSet<TipoResposta> TipoResposta { get; set; }
-
-        public DbSet<TipoUsuario> TipoUsuario { get; set; }
 
         public DbSet<Turma> Turma { get; set; }
 

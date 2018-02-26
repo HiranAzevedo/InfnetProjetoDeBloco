@@ -9,8 +9,7 @@ namespace CourseRating.Web.Mapper
         {
             var avaliacao = new Avaliacao
             {
-                Descricao = viewModel.Descricao,
-                Status = viewModel.Status,
+                //TODO alterar
             };
             return avaliacao;
         }
@@ -19,9 +18,7 @@ namespace CourseRating.Web.Mapper
         {
             var viewModel = new AvaliacaoViewModel
             {
-                Descricao = avaliacao.Descricao,
-                Status = avaliacao.Status,
-               
+                //TODO alterar
             };
 
             return viewModel;

@@ -2,12 +2,12 @@
 
 namespace CourseRating.Domain.Entities
 {
-    public class Curso
+    public  class Bloco
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         public string Nome { get; set; }
 
-        public IEnumerable<Bloco> Blocos { get; set; }
+        public IEnumerable<Modulo> Modulos { get; set; }
     }
 }
