@@ -9,8 +9,12 @@ namespace CourseRating.Web.Mapper
         {
             var usuario = new Usuario
             {
-                //TODO adicionar tipo usuario
+                Id = viewModel.Id,
+                Login = viewModel.Login,
+                Senha = viewModel.Senha,
+                TipoAcessoUsuario = viewModel.TipoUsuario
             };
+
             return usuario;
         }
 
@@ -18,7 +22,10 @@ namespace CourseRating.Web.Mapper
         {
             var viewModel = new UsuarioViewModel
             {
-                //TODO adicionar tipo usuario
+                Senha = usuario.Senha,
+                Login = usuario.Login,
+                Id = usuario.Id,
+                TipoUsuario = usuario.TipoAcessoUsuario
             };
 
             return viewModel;

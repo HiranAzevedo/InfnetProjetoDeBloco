@@ -1,16 +1,20 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CourseRating.Domain.Entities;
+using System.ComponentModel.DataAnnotations;
 
 namespace CourseRating.Web.ViewModels
 {
     public class UsuarioViewModel
     {
+        [Key]
+        public int Id { get; set; }
+
         [Required]
-        public string Cpf { get; set; }
+        public string Login { get; set; }
+
         [Required]
-        public string Nome { get; set; }
+        public string Senha { get; set; }
+
         [Required]
-        public string Telefone { get; set; }
-        [Required]
-        public string Sexo { get; set; }
+        public TipoAcessoUsuario TipoUsuario { get; set; }
     }
 }
