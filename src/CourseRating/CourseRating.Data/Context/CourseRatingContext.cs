@@ -8,7 +8,7 @@ namespace CourseRating.Data.Context
 {
     public class CourseRatingContext : DbContext
     {
-        public CourseRatingContext() : base(nameof(CourseRating))
+        public CourseRatingContext() : base("DefaultConnection")
         { }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
