@@ -5,7 +5,7 @@ namespace CourseRating.Web.Mapper
 {
     public class AlunoMapper
     {
-        public static Aluno ExtractAlunoFromViewModel(AlunoViewModel viewModel)
+        public static Aluno ExtractFromViewModel(AlunoViewModel viewModel)
         {
             var aluno = new Aluno
             {
