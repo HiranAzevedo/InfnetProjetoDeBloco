@@ -3,26 +3,26 @@ using CourseRating.Web.ViewModels;
 
 namespace CourseRating.Web.Mapper
 {
-    public class AlunoMapper
+    public class TurmaMapper
     {
-        public static Aluno ExtractFromViewModel(TurmaViewModel viewModel)
+        public static Turma ExtractFromViewModel(TurmaViewModel viewModel)
         {
-            var aluno = new Aluno
+            var turma = new Turma
             {
-                Email = viewModel.Email,
-                Matricula = viewModel.Matricula,
+                Id = viewModel.Id,
+                Modulo = viewModel.Modulo
                 //TODO Adicionar todos os atributos
             };
-            return aluno;
+            return turma;
         }
 
 
-        public static TurmaViewModel BuildViewModelFrom(Aluno aluno)
+        public static TurmaViewModel BuildViewModelFrom(Turma turma)
         {
             var viewModel = new TurmaViewModel
             {
-                Email = aluno.Email,
-                Matricula = aluno.Matricula,
+                Id = turma.Id,
+                Modulo = turma.Modulo,
                 //TODO Adicionar todos os atributos
             };
 

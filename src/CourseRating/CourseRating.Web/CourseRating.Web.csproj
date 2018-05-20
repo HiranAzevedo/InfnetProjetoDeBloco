@@ -186,6 +186,7 @@
     <Compile Include="Mapper\AvaliacaoMapper.cs" />
     <Compile Include="Mapper\CursoMapper.cs" />
     <Compile Include="Mapper\ProfessorMapper.cs" />
+    <Compile Include="Mapper\TurmaMapper.cs" />
     <Compile Include="Mapper\UsuarioMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AlunoViewModel.cs" />
