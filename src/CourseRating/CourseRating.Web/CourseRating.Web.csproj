@@ -180,6 +180,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ModuloController.cs" />
     <Compile Include="Controllers\ProfessorController.cs" />
+    <Compile Include="Controllers\QuestionarioController.cs" />
     <Compile Include="Controllers\TurmaController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
@@ -190,6 +191,7 @@
     <Compile Include="Mapper\CursoMapper.cs" />
     <Compile Include="Mapper\ModuloMapper.cs" />
     <Compile Include="Mapper\ProfessorMapper.cs" />
+    <Compile Include="Mapper\QuestionarioMapper.cs" />
     <Compile Include="Mapper\TurmaMapper.cs" />
     <Compile Include="Mapper\UsuarioMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -201,6 +203,7 @@
     <Compile Include="ViewModels\CursoViewModel.cs" />
     <Compile Include="ViewModels\ModuloViewModel.cs" />
     <Compile Include="ViewModels\ProfessorViewModel.cs" />
+    <Compile Include="ViewModels\QuestionarioViewModel.cs" />
     <Compile Include="ViewModels\TipoRespostaViewModel.cs" />
     <Compile Include="ViewModels\TurmaViewModel.cs" />
     <Compile Include="ViewModels\UsuarioViewModel.cs" />
@@ -258,6 +261,7 @@
     <Folder Include="Views\Curso\" />
     <Folder Include="Views\Modulo\" />
     <Folder Include="Views\Professor\" />
+    <Folder Include="Views\Questionario\" />
     <Folder Include="Views\Turma\" />
   </ItemGroup>
   <ItemGroup>

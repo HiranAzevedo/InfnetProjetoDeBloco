@@ -52,6 +52,7 @@
     <Compile Include="Interface\ICursoAppService.cs" />
     <Compile Include="Interface\IModuloAppService.cs" />
     <Compile Include="Interface\IProfessorAppService.cs" />
+    <Compile Include="Interface\IQuestionarioAppService.cs" />
     <Compile Include="Interface\ITurmaAppService.cs" />
     <Compile Include="Interface\IUsuarioAppService.cs" />
     <Compile Include="Services\AlunoAppService.cs" />

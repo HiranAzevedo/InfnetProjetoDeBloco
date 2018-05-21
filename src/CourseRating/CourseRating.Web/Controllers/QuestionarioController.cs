@@ -7,19 +7,19 @@ using System.Web.Mvc;
 
 namespace CourseRating.Web.Controllers
 {
-    public class ModuloController : Controller
+    public class QuestionarioController : Controller
     {
-        private readonly IModuloAppService _service;
+        private readonly IQuestionarioAppService _service;
 
-        public ModuloController(IModuloAppService moduloApp)
+        public QuestionarioController(IQuestionarioAppService questionarioApp)
         {
-            _service = moduloApp;
+            _service = questionarioApp;
         }
 
-        // GET: Modulo
-        public ActionResult Index() => View(_service.GetAll().Select(ModuloMapper.BuildViewModelFrom));
+        // GET: Questionario
+        public ActionResult Index() => View(_service.GetAll().Select(QuestionarioMapper.BuildViewModelFrom));
 
-        // GET: Modulo/Details/5
+        // GET: Questionario/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -27,41 +27,41 @@ namespace CourseRating.Web.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var ModuloViewModel = ModuloMapper.BuildViewModelFrom(_service.GetById(id.Value));
+            var QuestionarioViewModel = QuestionarioMapper.BuildViewModelFrom(_service.GetById(id.Value));
 
-            if (ModuloViewModel == null)
+            if (QuestionarioViewModel == null)
             {
                 return HttpNotFound();
             }
-            return View(ModuloViewModel);
+            return View(QuestionarioViewModel);
         }
 
-        // GET: Modulo/Create
+        // GET: Questionario/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Modulo/Create
+        // POST: Questionario/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Login,Senha,TipoModulo")] ModuloViewModel ModuloViewModel)
+        public ActionResult Create([Bind(Include = "Id,Login,Senha,TipoQuestionario")] QuestionarioViewModel QuestionarioViewModel)
         {
             if (!ModelState.IsValid)
             {
-                return View(ModuloViewModel);
+                return View(QuestionarioViewModel);
             }
 
-            var Modulo = ModuloMapper.ExtractFromViewModel(ModuloViewModel);
-            _service.Add(Modulo);
+            var Questionario = QuestionarioMapper.ExtractFromViewModel(QuestionarioViewModel);
+            _service.Add(Questionario);
 
             return RedirectToAction(nameof(Index));
 
         }
 
-        // GET: Modulo/Edit/5
+        // GET: Questionario/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -69,35 +69,35 @@ namespace CourseRating.Web.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var ModuloViewModel = ModuloMapper.BuildViewModelFrom(_service.GetById(id.Value));
+            var QuestionarioViewModel = QuestionarioMapper.BuildViewModelFrom(_service.GetById(id.Value));
 
-            if (ModuloViewModel == null)
+            if (QuestionarioViewModel == null)
             {
                 return HttpNotFound();
             }
 
-            return View(ModuloViewModel);
+            return View(QuestionarioViewModel);
         }
 
-        // POST: Modulo/Edit/5
+        // POST: Questionario/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Login,Senha,TipoModulo")] ModuloViewModel ModuloViewModel)
+        public ActionResult Edit([Bind(Include = "Id,Login,Senha,TipoQuestionario")] QuestionarioViewModel QuestionarioViewModel)
         {
             if (!ModelState.IsValid)
             {
-                return View(ModuloViewModel);
+                return View(QuestionarioViewModel);
             }
 
-            var Modulo = ModuloMapper.ExtractFromViewModel(ModuloViewModel);
-            _service.Update(Modulo);
+            var Questionario = QuestionarioMapper.ExtractFromViewModel(QuestionarioViewModel);
+            _service.Update(Questionario);
 
-            return RedirectToAction(nameof(Details), new { id = Modulo.Id });
+            return RedirectToAction(nameof(Details), new { id = Questionario.Id });
         }
 
-        // GET: Modulo/Delete/5
+        // GET: Questionario/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -105,17 +105,17 @@ namespace CourseRating.Web.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var ModuloViewModel = ModuloMapper.BuildViewModelFrom(_service.GetById(id.Value));
+            var QuestionarioViewModel = QuestionarioMapper.BuildViewModelFrom(_service.GetById(id.Value));
 
-            if (ModuloViewModel == null)
+            if (QuestionarioViewModel == null)
             {
                 return HttpNotFound();
             }
 
-            return View(ModuloViewModel);
+            return View(QuestionarioViewModel);
         }
 
-        // POST: Modulo/Delete/5
+        // POST: Questionario/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
