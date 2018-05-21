@@ -178,6 +178,7 @@
     <Compile Include="Controllers\AvaliacaoController.cs" />
     <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ModuloController.cs" />
     <Compile Include="Controllers\ProfessorController.cs" />
     <Compile Include="Controllers\TurmaController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
@@ -187,6 +188,7 @@
     <Compile Include="Mapper\AlunoMapper.cs" />
     <Compile Include="Mapper\AvaliacaoMapper.cs" />
     <Compile Include="Mapper\CursoMapper.cs" />
+    <Compile Include="Mapper\ModuloMapper.cs" />
     <Compile Include="Mapper\ProfessorMapper.cs" />
     <Compile Include="Mapper\TurmaMapper.cs" />
     <Compile Include="Mapper\UsuarioMapper.cs" />
@@ -254,6 +256,7 @@
     <Folder Include="Views\Aluno\" />
     <Folder Include="Views\Avaliacao\" />
     <Folder Include="Views\Curso\" />
+    <Folder Include="Views\Modulo\" />
     <Folder Include="Views\Professor\" />
     <Folder Include="Views\Turma\" />
   </ItemGroup>

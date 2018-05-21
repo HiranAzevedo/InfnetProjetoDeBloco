@@ -1,12 +1,17 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace CourseRating.Web.ViewModels
 {
     public class ModuloViewModel
     {
         [Required]
-        public string Descricao { get; set; }
+        public string Id { get; set; }
         [Required]
-        public bool Status { get; set; }
+        public string  Name { get; set; }
+        [Required]
+        public DateTime DataInicio { get; set; }
+        [Required]
+        public DateTime DataTermino { get; set; }
     }
 }
