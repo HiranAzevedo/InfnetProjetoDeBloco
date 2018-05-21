@@ -2,7 +2,7 @@
 
 namespace CourseRating.Web.ViewModels
 {
-    public class TurmaViewModel
+    public class AlunoViewModel
     {
         [Required]
         public int Matricula { get; set; }

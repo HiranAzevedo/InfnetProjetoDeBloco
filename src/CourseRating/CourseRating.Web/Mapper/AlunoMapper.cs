@@ -5,7 +5,7 @@ namespace CourseRating.Web.Mapper
 {
     public class AlunoMapper
     {
-        public static Aluno ExtractFromViewModel(TurmaViewModel viewModel)
+        public static Aluno ExtractFromViewModel(AlunoViewModel viewModel)
         {
             var aluno = new Aluno
             {
@@ -17,9 +17,9 @@ namespace CourseRating.Web.Mapper
         }
 
 
-        public static TurmaViewModel BuildViewModelFrom(Aluno aluno)
+        public static AlunoViewModel BuildViewModelFrom(Aluno aluno)
         {
-            var viewModel = new TurmaViewModel
+            var viewModel = new AlunoViewModel
             {
                 Email = aluno.Email,
                 Matricula = aluno.Matricula,

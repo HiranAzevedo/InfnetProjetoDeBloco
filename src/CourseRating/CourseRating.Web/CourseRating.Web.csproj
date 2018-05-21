@@ -174,6 +174,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SimpleInjectorInitializer.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AlunoController.cs" />
     <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProfessorController.cs" />
@@ -249,6 +250,7 @@
     <Content Include="Views\Usuario\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Views\Aluno\" />
     <Folder Include="Views\Curso\" />
     <Folder Include="Views\Professor\" />
     <Folder Include="Views\Turma\" />
