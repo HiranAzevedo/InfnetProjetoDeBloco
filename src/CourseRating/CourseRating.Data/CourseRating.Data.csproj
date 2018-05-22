@@ -59,6 +59,8 @@
     <Compile Include="Repositories\AvaliacaoRepository.cs" />
     <Compile Include="Repositories\CursoRepository.cs" />
     <Compile Include="Repositories\ModuloRepository.cs" />
+    <Compile Include="Repositories\ProfessorRepository.cs" />
+    <Compile Include="Repositories\QuestionarioRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Repositories\TurmaRepository.cs" />
     <Compile Include="Repositories\UsuarioRepository.cs" />

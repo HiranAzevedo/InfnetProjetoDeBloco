@@ -24,7 +24,8 @@ namespace CourseRating.CC.IoC
             container.Register<IModuloAppService, ModuloAppService>(Lifestyle.Scoped);
             container.Register<ITurmaAppService, TurmaAppService>(Lifestyle.Scoped);
             container.Register<IUsuarioAppService, UsuarioAppService>(Lifestyle.Scoped);
-
+            container.Register<IProfessorAppService, ProfessorAppService>(Lifestyle.Scoped);
+            container.Register<IQuestionarioAppService, QuestionarioAppService>(Lifestyle.Scoped);
             //Domain
             container.Register<IAlunoService, AlunoService>(Lifestyle.Scoped);
             container.Register<IAvaliacaoService, AvaliacaoService>(Lifestyle.Scoped);
@@ -32,7 +33,8 @@ namespace CourseRating.CC.IoC
             container.Register<IModuloService, ModuloService>(Lifestyle.Scoped);
             container.Register<ITurmaService, TurmaService>(Lifestyle.Scoped);
             container.Register<IUsuarioService, UsuarioService>(Lifestyle.Scoped);
-
+            container.Register<IProfessorService, ProfessorService>(Lifestyle.Scoped);
+            container.Register<IQuestionarioService, QuestionarioService>(Lifestyle.Scoped);
             //Infra
             container.Register<IAlunoRepository, AlunoRepository>(Lifestyle.Scoped);
             container.Register<IAvaliacaoRepository, AvaliacaoRepository>(Lifestyle.Scoped);
@@ -40,6 +42,9 @@ namespace CourseRating.CC.IoC
             container.Register<IModuloRepository, ModuloRepository>(Lifestyle.Scoped);
             container.Register<ITurmaRepository, TurmaRepository>(Lifestyle.Scoped);
             container.Register<IUsuarioRepository, UsuarioRepository>(Lifestyle.Scoped);
+            container.Register<IProfessorRepository, ProfessorRepository>(Lifestyle.Scoped);
+            container.Register<IQuestionarioRepository, QuestionarioRepository>(Lifestyle.Scoped);
+
 
             container.Register<CourseRatingContext>(Lifestyle.Scoped);
         }

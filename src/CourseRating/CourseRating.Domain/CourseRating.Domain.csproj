@@ -65,6 +65,8 @@
     <Compile Include="Interfaces\Repositories\IAvaliacaoRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICursoRepository.cs" />
     <Compile Include="Interfaces\Repositories\IModuloRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IProfessorRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IQuestionarioRepository.cs" />
     <Compile Include="Interfaces\Repositories\IRepositoryBase.cs" />
     <Compile Include="Interfaces\Repositories\ITurmaRepository.cs" />
     <Compile Include="Interfaces\Repositories\IUsuarioRepository.cs" />
@@ -72,6 +74,8 @@
     <Compile Include="Interfaces\Services\IAvaliacaoService.cs" />
     <Compile Include="Interfaces\Services\ICursoService.cs" />
     <Compile Include="Interfaces\Services\IModuloService.cs" />
+    <Compile Include="Interfaces\Services\IProfessorService.cs" />
+    <Compile Include="Interfaces\Services\IQuestionarioService.cs" />
     <Compile Include="Interfaces\Services\IServiceBase.cs" />
     <Compile Include="Interfaces\Services\ITurmaService.cs" />
     <Compile Include="Interfaces\Services\IUsuarioService.cs" />
@@ -80,6 +84,8 @@
     <Compile Include="Services\AvaliacaoService.cs" />
     <Compile Include="Services\CursoService.cs" />
     <Compile Include="Services\ModuloService.cs" />
+    <Compile Include="Services\ProfessorService.cs" />
+    <Compile Include="Services\QuestionarioService.cs" />
     <Compile Include="Services\ServiceBase.cs" />
     <Compile Include="Services\TurmaService.cs" />
     <Compile Include="Services\UsuarioService.cs" />

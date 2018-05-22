@@ -62,6 +62,8 @@
     <Compile Include="Services\AvaliacaoAppService.cs" />
     <Compile Include="Services\CursoAppService.cs" />
     <Compile Include="Services\ModuloAppService.cs" />
+    <Compile Include="Services\ProfessorAppService.cs" />
+    <Compile Include="Services\QuestionarioAppService.cs" />
     <Compile Include="Services\TurmaAppService.cs" />
     <Compile Include="Services\UsuarioAppService.cs" />
   </ItemGroup>
