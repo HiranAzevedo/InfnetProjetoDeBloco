@@ -14,6 +14,7 @@ namespace ServiceRecuperaDados
         private static List<Modulo> _modulos;
         private static List<Bloco> _blocos;
 
+        //FAZER NO WCF
         public PopulaDados()
         {
             _cursos = new List<Curso>();
